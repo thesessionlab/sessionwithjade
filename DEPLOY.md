@@ -43,7 +43,9 @@ You should now see `index.html`, `404.html`, `CNAME`, `README.md`, `robots.txt`,
 2. Under "Build and deployment", set Source to **Deploy from a branch**.
 3. Branch: **main**. Folder: **/ (root)**. Click **Save**.
 4. Wait about a minute. Refresh. A green banner appears with your live URL,
-   `https://YOURNAME.github.io/sessionwithjade/`. Click it and check the site loads.
+   `https://YOURNAME.github.io/sessionwithjade/`, where YOURNAME is your GitHub
+   username. Click it and check the site loads. Make a note of that username, you
+   need it again in the DNS step.
 5. Still on the Pages screen, in **Custom domain** type `sessionwithjade.com` and
    click Save. It will show a DNS warning. That is expected until the next step.
 
@@ -64,8 +66,19 @@ Then add these five records:
 | A | @ | 185.199.111.153 | 1 hour |
 | CNAME | www | YOURNAME.github.io | 1 hour |
 
-Replace `YOURNAME` with your actual GitHub username. The trailing dot GoDaddy
-sometimes adds is fine.
+**What goes in place of `YOURNAME`.** Your GitHub username, which is the name you
+chose when you signed up. Not your real name, not the repository name.
+
+Find it by looking at the address bar when you are in your repo. It reads
+`github.com/YOURNAME/sessionwithjade`. The first part after github.com is the one
+you want. It is also shown top right when you click your profile picture.
+
+So if your username is `jadematthew`, the CNAME value is exactly:
+
+    jadematthew.github.io
+
+Nothing else. No `https://`, no `/sessionwithjade` on the end, no `www` in front.
+A trailing dot, if GoDaddy adds one automatically, is fine and can be left alone.
 
 ### Finish
 
@@ -95,7 +108,8 @@ sometimes adds is fine.
 7. Render then shows you the exact DNS values to use. **Use the values Render shows
    you, not the ones in this document**, because they differ per account and Render
    changes them. Broadly you will add an A record on `@` pointing at Render's IP and
-   a CNAME on `www` pointing at `sessionwithjade.onrender.com`.
+   a CNAME on `www` pointing at `sessionwithjade.onrender.com`. Render uses the site
+   name you chose in step 4, not your GitHub username.
 8. Enter those in GoDaddy exactly as above, deleting the parking records first.
 9. Render issues the certificate automatically once DNS resolves.
 

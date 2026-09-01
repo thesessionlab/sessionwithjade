@@ -179,6 +179,8 @@ ul.ledger{padding:0;margin:2.5rem 0 0}
 
 /* ---------- testimonials ---------- */
 .tcard{border-left:1px solid var(--gold);padding-left:1.4rem}
+.dark .tcard p{color:#e6e1d9}
+.tcard.wide{max-width:52ch}
 .tcard p{font-family:var(--serif);font-size:1.22rem;line-height:1.42;font-style:italic;color:#2a2724}
 .tcard .attrib{margin-top:1rem}
 
@@ -213,6 +215,15 @@ footer a:hover{opacity:1;color:var(--gold-lt)}
 .ph{border:1px dashed var(--gold);padding:1.1rem 1.2rem;font-size:.84rem;color:var(--muted);margin-top:1.6rem;max-width:var(--measure)}
 .dark .ph{color:var(--muted-dark)}
 .ph b{font-weight:500;color:var(--gold)}
+
+/* ---------- booking ---------- */
+.book-band{border:1px solid var(--gold);padding:clamp(1.6rem,4vw,2.6rem)}
+.dark .book-band{border-color:var(--gold)}
+.book-band h3{margin-bottom:.6rem}
+.book-slot{margin-top:2rem;border:1px solid var(--rule-dark);background:#fff}
+.book-slot .waiting{padding:2.5rem;color:var(--muted);font-size:.9rem;background:var(--paper)}
+.book-or{display:flex;align-items:center;gap:1rem;margin:2.6rem 0 1.6rem;font-size:.82rem;letter-spacing:.06em;color:var(--muted-dark)}
+.book-or::before,.book-or::after{content:"";flex:1;height:1px;background:var(--rule-dark)}
 
 /* ---------- programme blocks ---------- */
 section[id^="prog-"]{scroll-margin-top:72px}
@@ -281,7 +292,7 @@ figcaption{font-size:.78rem;letter-spacing:.05em;color:var(--muted);margin-top:.
       <a href="#/icop" data-nav>The ICOP Method</a>
       <a href="#/session" data-nav>SESSION</a>
       <a href="#/about" data-nav>About</a>
-      <a href="#/enquire" data-nav>Enquire</a>
+      <a href="#/enquire" data-nav>Book a call</a>
     </nav>
   </div>
 </header>
@@ -297,8 +308,8 @@ figcaption{font-size:.78rem;letter-spacing:.05em;color:var(--muted);margin-top:.
       <h1 class="reveal">Perform at your best when the pressure is real.</h1>
       <p class="lede reveal">Performance, speaking, presence and relationships. Coaching for leaders and entrepreneurs who have to deliver when it matters, at work and in life.</p>
       <div class="btns reveal">
-        <a class="btn" href="#/enquire" data-nav>Work with Jade</a>
-        <a class="btn ghost" href="#/icop" data-nav>The ICOP Method</a>
+        <a class="btn" data-book>Book a <span data-mins>20</span> minute discovery call</a>
+        <a class="btn ghost" href="#/coaching" data-nav>How I work</a>
       </div>
     </div>
   </section>
@@ -424,12 +435,20 @@ figcaption{font-size:.78rem;letter-spacing:.05em;color:var(--muted);margin-top:.
     <div class="wrap">
       <div class="cue"><span>In their words</span></div>
       <h2>What changes.</h2>
-      <div class="three" style="margin-top:2.6rem">
-        <div class="tcard"><p>Placeholder testimonial. Two or three sentences naming the situation, the shift and the outcome.</p><div class="attrib">Name · role · company</div></div>
-        <div class="tcard"><p>Placeholder testimonial. Strongest one should sit first and name a real high stakes moment.</p><div class="attrib">Name · role · company</div></div>
-        <div class="tcard"><p>Placeholder testimonial. A corporate voice here balances the two individual ones.</p><div class="attrib">Name · role · company</div></div>
+      <div class="three" style="margin-top:2.8rem">
+        <div class="tcard">
+          <p>The most powerful coaching I've done. Usually I can't stick with it, but this approach has changed so much so quickly, I can't believe it.</p>
+          <div class="attrib">Ciara · CEO · cosmetics</div>
+        </div>
+        <div class="tcard">
+          <p>I discovered where the lack of confidence was coming from, worked on personal and professional issues I was having, and learned voice skills to support my communication and my accent.</p>
+          <div class="attrib">Jacques · Executive · Hilton</div>
+        </div>
+        <div class="tcard">
+          <p>Since working with Jade I've spent less time worrying and more time doing, kicked some unhealthy habits, started prioritising friends and family again, built confidence at work and achieved a promotion.</p>
+          <div class="attrib">Jack · Head of Music</div>
+        </div>
       </div>
-      <div class="ph"><b>To supply</b> · three approved client quotes with permission to name or anonymise, plus logos if any client will allow it.</div>
     </div>
   </section>
 
@@ -462,6 +481,10 @@ figcaption{font-size:.78rem;letter-spacing:.05em;color:var(--muted);margin-top:.
         <p>I built Mara so the work does not stop when the session ends. Camera on, you run the real thing, and you are scored live across six areas. Then you reset, run it again and watch the difference on the recording.</p>
         <div class="dims">
           <span>Pace</span><span>Vocal range</span><span>Energy</span><span>Clarity</span><span>Presence</span><span>Impact</span>
+        </div>
+        <div class="tcard" style="margin-top:2rem">
+          <p>An absolute game changer in how I show up with prospects, customers and the C suite. It reads my wording, breathing, pauses, posture and tonality, and shows me exactly where to improve.</p>
+          <div class="attrib">David Homewood · Global Head of Sales · Faro (Ametek)</div>
         </div>
         <div class="btns">
           <a class="btn" href="https://mara.thesessionlab.com" target="_blank" rel="noopener">Try Mara · £29 a month</a>
@@ -497,8 +520,8 @@ figcaption{font-size:.78rem;letter-spacing:.05em;color:var(--muted);margin-top:.
   <section class="tint">
     <div class="wrap" style="text-align:left">
       <h2 style="max-width:20ch">Tell me about the room you have to walk into.</h2>
-      <p class="lede" style="margin-top:1.2rem">Coaching starts with a conversation. Thirty minutes, no charge, and a straight answer about whether I am the right person.</p>
-      <div class="btns"><a class="btn" href="#/enquire" data-nav>Start a conversation</a></div>
+      <p class="lede" style="margin-top:1.2rem">Coaching starts with a conversation. <span data-mins-word>Twenty</span> minutes, no charge, and a straight answer about whether I am the right person.</p>
+      <div class="btns"><a class="btn" data-book>Book a <span data-mins>20</span> minute discovery call</a></div>
     </div>
   </section>
 </div>
@@ -566,7 +589,12 @@ figcaption{font-size:.78rem;letter-spacing:.05em;color:var(--muted);margin-top:.
       </ul>
 
       <blockquote class="pull">The goal is not a polished version of you. It is to make the real you more powerful, more deliberate and more accessible under pressure.</blockquote>
-      <div class="btns"><a class="btn" href="#/enquire" data-nav>Enquire about 1:1 coaching</a></div>
+
+      <div class="tcard wide" style="margin-top:3rem">
+        <p>I started communication and confidence coaching with Jade and it was an amazing experience. I discovered where the lack of confidence was coming from, worked on personal and professional issues I was having, and learned voice skills to support my communication and my accent.</p>
+        <div class="attrib">Jacques · Executive · Hilton</div>
+      </div>
+      <div class="btns"><a class="btn" data-book>Book a <span data-mins>20</span> minute discovery call</a></div>
     </div>
   </section>
 
@@ -611,7 +639,13 @@ figcaption{font-size:.78rem;letter-spacing:.05em;color:var(--muted);margin-top:.
       </ul>
 
       <blockquote class="pull">You do not practise until you know it. You practise until you can deliver it.</blockquote>
-      <div class="btns"><a class="btn" href="#/enquire" data-nav>Book speaking coaching</a></div>
+
+      <div class="tcard wide" style="margin-top:3rem">
+        <p>The public speaking coaching has changed my career and my life. I have won huge pitches and felt totally confident in high pressured situations where I used to get extremely nervous. Working with Jade to get rid of my fear, work out where it came from and then learn better speaking skills has been the most valuable coaching experience I have had. I cannot recommend this highly enough.</p>
+        <div class="attrib">Martin · Creative Director</div>
+      </div>
+
+      <div class="btns"><a class="btn" data-book>Book a <span data-mins>20</span> minute discovery call</a></div>
     </div>
   </section>
 
@@ -663,7 +697,12 @@ figcaption{font-size:.78rem;letter-spacing:.05em;color:var(--muted);margin-top:.
 
       <blockquote class="pull">This is not about removing every uncomfortable feeling. It is about developing the skills to handle yourself when life gets uncomfortable.</blockquote>
       <p>So you think more clearly. Respond rather than react. Recover more quickly. And feel more in control of yourself.</p>
-      <p class="note">This is coaching and hypnotherapy, not medical treatment. If you are dealing with a diagnosed condition, please speak to your GP or a mental health professional. I am happy to work alongside them.</p>
+      <div class="tcard wide" style="margin-top:3rem">
+        <p>She allows time for me to share without losing focus on the goals I have, specifically workplace communication and negotiation, and building healthy routines. Since working with Jade I've spent less time worrying and more time doing, managed to kick some unhealthy habits, started prioritising friends and family again, built confidence at work and achieved a promotion.</p>
+        <div class="attrib">Jack · Head of Music</div>
+      </div>
+
+      <p class="note" style="margin-top:2rem">This is coaching and hypnotherapy, not medical treatment. If you are dealing with a diagnosed condition, please speak to your GP or a mental health professional. I am happy to work alongside them.</p>
       <div class="btns"><a class="btn" href="#/enquire" data-nav>Start a conversation</a></div>
     </div>
   </section>
@@ -701,7 +740,7 @@ figcaption{font-size:.78rem;letter-spacing:.05em;color:var(--muted);margin-top:.
       </ul>
 
       <p style="margin-top:2rem">Not to turn you into someone else. Not to give you a script for how a confident person behaves. To help you feel more comfortable being fully yourself.</p>
-      <div class="btns"><a class="btn" href="#/enquire" data-nav>Find out more</a></div>
+      <div class="btns"><a class="btn" data-book>Book a <span data-mins>20</span> minute discovery call</a></div>
     </div>
   </section>
 
@@ -733,7 +772,7 @@ figcaption{font-size:.78rem;letter-spacing:.05em;color:var(--muted);margin-top:.
     <div class="wrap">
       <h2 style="max-width:20ch">Not sure which one fits?</h2>
       <p class="lede" style="margin-top:1.2rem">Most people are not. Tell me the situation and I will tell you where to start, or whether I am the right person at all.</p>
-      <div class="btns"><a class="btn" href="#/enquire" data-nav>Start a conversation</a><a class="btn ghost" href="#/corporate" data-nav>Corporate and teams</a></div>
+      <div class="btns"><a class="btn" data-book>Book a <span data-mins>20</span> minute discovery call</a><a class="btn ghost" href="#/corporate" data-nav>Corporate and teams</a></div>
     </div>
   </section>
 </div>
@@ -1019,6 +1058,10 @@ figcaption{font-size:.78rem;letter-spacing:.05em;color:var(--muted);margin-top:.
       <div class="dims">
         <span>Pace</span><span>Vocal range</span><span>Energy</span><span>Clarity</span><span>Presence</span><span>Impact</span>
       </div>
+      <div class="tcard wide" style="margin-top:2.4rem">
+        <p>Mara has completely changed how I communicate and has become my go to communication coach.</p>
+        <div class="attrib">David Homewood · Global Head of Sales · Faro (Ametek)</div>
+      </div>
       <div class="btns"><a class="btn" href="https://mara.thesessionlab.com" target="_blank" rel="noopener">Try Mara · £29 a month</a></div>
       <p class="note" style="color:var(--muted-dark)">Unlimited sessions · cancel any time</p>
     </div>
@@ -1120,8 +1163,26 @@ figcaption{font-size:.78rem;letter-spacing:.05em;color:var(--muted);margin-top:.
   <section class="page-head dark" style="min-height:auto">
     <div class="wrap">
       <div class="cue"><span>Start here</span></div>
-      <h1>Tell me what you have to walk into.</h1>
-      <p class="lede">Thirty minutes, no charge, and a straight answer about whether I am the right person for it.</p>
+      <h1>Book a <span data-mins>20</span> minute discovery call.</h1>
+      <p class="lede">Tell me what you have to walk into. No charge, no pitch, and a straight answer about whether I am the right person for it.</p>
+
+      <div class="book-band" style="margin-top:2.5rem;max-width:720px">
+        <h3>What happens on the call</h3>
+        <ul class="spec" style="font-size:.98rem">
+          <li>You describe the situation, the room or the deadline</li>
+          <li>I tell you what I think is actually going on</li>
+          <li>If I can help, I explain how and what it would involve</li>
+          <li>If I cannot, I say so and point you somewhere better</li>
+        </ul>
+        <div class="btns" style="margin-top:1.6rem"><a class="btn" data-book>Choose a time</a></div>
+      </div>
+
+      <div id="book-slot" class="book-slot">
+        <div class="waiting">Booking calendar loads here once the link is connected. Until then, use the form below and I will reply with times.</div>
+      </div>
+
+      <div class="book-or"><span>Or send a message</span></div>
+
       <form id="enq">
         <div class="field"><label for="n">Name</label><input id="n" type="text" autocomplete="name"></div>
         <div class="field"><label for="e">Email</label><input id="e" type="email" autocomplete="email"></div>
@@ -1140,7 +1201,7 @@ figcaption{font-size:.78rem;letter-spacing:.05em;color:var(--muted);margin-top:.
         </div>
         <div class="field"><label for="m">The situation, and when it happens</label><textarea id="m" placeholder="The room, the conversation, the event, the deadline."></textarea></div>
         <div class="btns" style="margin-top:0"><button class="btn" type="button" id="send">Send enquiry</button></div>
-        <p class="note" id="formnote">Prototype only. Connect to your form handler and calendar before this goes live.</p>
+        <p class="note" id="formnote">Prototype only. Connect to your form handler before this goes live.</p>
       </form>
     </div>
   </section>
@@ -1172,7 +1233,7 @@ figcaption{font-size:.78rem;letter-spacing:.05em;color:var(--muted);margin-top:.
           <li><a href="#/icop" data-nav>The ICOP Method</a></li>
           <li><a href="#/speaking" data-nav>Keynotes</a></li>
           <li><a href="#/about" data-nav>About</a></li>
-          <li><a href="#/enquire" data-nav>Enquire</a></li>
+          <li><a href="#/enquire" data-nav>Book a call</a></li>
         </ul>
       </div>
       <div>
@@ -1194,6 +1255,21 @@ figcaption{font-size:.78rem;letter-spacing:.05em;color:var(--muted);margin-top:.
 </footer>
 
 <script>
+/* ============================================================
+   BOOKING LINK · paste your booking URL between the quotes.
+   Every "Book a discovery call" button on the site uses it.
+   Leave it empty and those buttons fall back to the form.
+   Calendly:  "https://calendly.com/yourname/20min"
+   Google:    "https://calendar.app.google/abc123"
+   A Calendly link loads their inline widget in Session colours.
+   Paste the plain event link with no ?back= or ?month= on the end.
+
+   CALL_MINUTES sets the length shown in every button and heading.
+   Change it if you swap to a different Calendly event.
+   ============================================================ */
+var BOOKING_URL = "https://calendly.com/jade-sessioncare/session-with-jade-discovery";
+var CALL_MINUTES = 20;
+
 (function(){
   var pages = ['home','coaching','speaking','corporate','icop','session','about','enquire'];
   var hdr = document.getElementById('hdr');
@@ -1248,6 +1324,58 @@ figcaption{font-size:.78rem;letter-spacing:.05em;color:var(--muted);margin-top:.
       }
     });
   });
+
+  // call length, written once into every button and heading
+  var mins = (typeof CALL_MINUTES === 'number' ? CALL_MINUTES : 20);
+  var words = {20:'Twenty', 25:'Twenty five', 30:'Thirty', 45:'Forty five', 60:'Sixty'};
+  document.querySelectorAll('[data-mins]').forEach(function(el){ el.textContent = mins; });
+  document.querySelectorAll('[data-mins-word]').forEach(function(el){
+    el.textContent = words[mins] || mins;
+  });
+
+  // booking links
+  var booking = (typeof BOOKING_URL === 'string' ? BOOKING_URL.trim() : '');
+  document.querySelectorAll('[data-book]').forEach(function(a){
+    if(booking){
+      a.setAttribute('href', booking);
+      a.setAttribute('target','_blank');
+      a.setAttribute('rel','noopener');
+    }else{
+      a.setAttribute('href','#/enquire');
+      a.setAttribute('data-nav','');
+    }
+  });
+  var slot = document.getElementById('book-slot');
+  if(slot && booking){
+    if(booking.indexOf('calendly.com') !== -1){
+      // Calendly inline widget: better sizing, and it reports height back to the page
+      var css = document.createElement('link');
+      css.rel = 'stylesheet';
+      css.href = 'https://assets.calendly.com/assets/external/widget.css';
+      document.head.appendChild(css);
+
+      var sep = booking.indexOf('?') === -1 ? '?' : '&';
+      var themed = booking + sep +
+        'hide_gdpr_banner=1' +
+        '&background_color=ffffff' +
+        '&text_color=0a0a0a' +
+        '&primary_color=b8965a';
+
+      slot.className = 'book-slot calendly-inline-widget';
+      slot.setAttribute('data-url', themed);
+      slot.style.minWidth = '320px';
+      slot.style.height = '700px';
+      slot.innerHTML = '';
+
+      var js = document.createElement('script');
+      js.src = 'https://assets.calendly.com/assets/external/widget.js';
+      js.async = true;
+      document.body.appendChild(js);
+    }else{
+      slot.innerHTML = '<iframe src="'+booking+'" title="Book an intro call with Jade" ' +
+        'style="border:0;width:100%;height:640px;background:#fff" loading="lazy"></iframe>';
+    }
+  }
 
   var send = document.getElementById('send');
   if(send){
