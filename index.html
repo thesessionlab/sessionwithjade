@@ -104,7 +104,16 @@ nav a.active{opacity:1;border-bottom-color:var(--gold)}
 .btns{display:flex;flex-wrap:wrap;gap:.9rem;margin-top:2rem}
 
 /* ---------- hero ---------- */
-.hero{padding-block:clamp(4rem,11vw,9rem) clamp(3rem,7vw,6rem);position:relative;overflow:hidden}
+.hero{padding-block:clamp(3rem,8vw,7rem) clamp(3rem,7vw,6rem);position:relative;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr);gap:clamp(2rem,5vw,4.5rem);align-items:center}
+.hero-portrait{margin:0;position:relative}
+.hero-portrait img{width:100%;height:auto;display:block;object-fit:cover}
+.hero-portrait::after{content:"";position:absolute;left:-12px;bottom:-12px;width:86px;height:86px;border-left:1px solid var(--gold);border-bottom:1px solid var(--gold)}
+@media (max-width:900px){
+  .hero-grid{grid-template-columns:minmax(0,1fr);gap:2.2rem}
+  .hero-portrait{order:-1;max-width:420px}
+  .hero-portrait::after{width:60px;height:60px}
+}
 .hero::after{content:"";position:absolute;inset:auto 0 0 0;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);opacity:.5}
 .hero h1{max-width:16ch}
 .hero .lede{max-width:44ch;margin-top:1.6rem}
@@ -215,8 +224,9 @@ footer a:hover{opacity:1;color:var(--gold-lt)}
 .page-head .lede{max-width:52ch;margin-top:1.4rem}
 
 /* ---------- placeholder marker ---------- */
-.ph{border:1px dashed var(--gold);padding:1.1rem 1.2rem;font-size:.84rem;color:var(--muted);margin-top:1.6rem;max-width:var(--measure)}
+.ph{display:none;border:1px dashed var(--gold);padding:1.1rem 1.2rem;font-size:.84rem;color:var(--muted);margin-top:1.6rem;max-width:var(--measure)}
 .dark .ph{color:var(--muted-dark)}
+body.draft .ph{display:block}
 .ph b{font-weight:500;color:var(--gold)}
 
 /* ---------- logo strips ---------- */
@@ -234,6 +244,9 @@ section:not(.dark) .logo-row img{filter:invert(1)}
 .wordmark{display:block;height:clamp(30px,4.4vw,46px);width:auto;margin:0}
 h2 .wordmark,h3 .wordmark{margin-bottom:.2rem}
 .wordmark-lead{margin-bottom:1.2rem}
+.wordmark-inline{display:inline-block;height:.72em;width:auto;vertical-align:baseline;position:relative;top:.02em;margin-right:.12em}
+section:not(.dark) .wordmark-inline{filter:none}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 
 /* ---------- sticky mobile cta ---------- */
 .sticky-cta{position:fixed;left:0;right:0;bottom:0;z-index:70;display:none;padding:.7rem var(--pad) calc(.7rem + env(safe-area-inset-bottom));background:rgba(10,10,10,.96);backdrop-filter:blur(10px);border-top:1px solid var(--rule-dark);transition:transform .3s}
@@ -342,7 +355,7 @@ blockquote.pull{margin:2.4rem 0 0;padding-left:1.6rem;border-left:1px solid var(
 
 /* ---------- portrait ---------- */
 .portrait{position:relative}
-.portrait img{width:100%;height:auto;filter:grayscale(100%) contrast(1.04);object-fit:cover}
+.portrait img{width:100%;height:auto;object-fit:cover}
 .portrait::after{content:"";position:absolute;inset:auto auto -10px -10px;width:64px;height:64px;border-left:1px solid var(--gold);border-bottom:1px solid var(--gold)}
 figcaption{font-size:.78rem;letter-spacing:.05em;color:var(--muted);margin-top:.9rem}
 .dark figcaption{color:var(--muted-dark)}
@@ -385,7 +398,7 @@ figcaption{font-size:.78rem;letter-spacing:.05em;color:var(--muted);margin-top:.
       <a href="#/speaking" data-nav>Keynotes</a>
       <a href="#/corporate" data-nav>Corporate</a>
       <a href="#/icop" data-nav>The ICOP Method</a>
-      <a href="#/session" data-nav>SESSION</a>
+      <a href="#/session" data-nav><img class="wordmark-inline" style="height:.85em" src="assets/session-wordmark-black.png" alt="Session"></a>
       <a href="#/about" data-nav>About</a>
       <a href="#/enquire" data-nav>Book a call</a>
     </nav>
@@ -398,20 +411,25 @@ figcaption{font-size:.78rem;letter-spacing:.05em;color:var(--muted);margin-top:.
 <div class="page live" id="p-home">
 
   <section class="hero dark">
-    <div class="wrap">
-      <div class="cue reveal"><span>The room goes quiet. It is your turn.</span></div>
-      <h1 class="reveal">Perform at your best when the pressure is real.</h1>
-      <p class="lede reveal">Performance, speaking, presence and relationships. Coaching for leaders and entrepreneurs who have to deliver when it matters, at work and in life.</p>
-      <div class="btns reveal">
-        <a class="btn" data-book>Book a <span data-mins>20</span> minute discovery call</a>
-        <a class="btn ghost" href="#/coaching" data-nav>How I work</a>
-      </div>
-      <p class="note reveal" style="color:var(--muted-dark);margin-top:.9rem">Free · no obligation · a straight answer about whether I can help</p>
+    <div class="wrap hero-grid">
+      <div>
+        <div class="cue reveal"><span>The room goes quiet. It is your turn.</span></div>
+        <h1 class="reveal" style="max-width:15ch">Perform at your best when the pressure is real.</h1>
+        <p class="lede reveal">Performance, speaking, presence and relationships. Coaching for leaders and entrepreneurs who have to deliver when it matters, at work and in life.</p>
+        <div class="btns reveal">
+          <a class="btn" data-book>Book a <span data-mins>20</span> minute discovery call</a>
+          <a class="btn ghost" href="#/coaching" data-nav>How I work</a>
+        </div>
 
-      <div class="hero-proof reveal">
-        <p>The most powerful coaching I've done. Usually I can't stick with it, but this approach has changed so much so quickly, I can't believe it.</p>
-        <div class="attrib">Ciara · CEO · cosmetics</div>
+        <div class="hero-proof reveal">
+          <p>The most powerful coaching I've done. Usually I can't stick with it, but this approach has changed so much so quickly, I can't believe it.</p>
+          <div class="attrib">Ciara · CEO · cosmetics</div>
+        </div>
       </div>
+
+      <figure class="hero-portrait reveal">
+        <img src="https://i.postimg.cc/XYv84Wwp/eo7a2474-23644779.jpg" alt="Jade Matthew" fetchpriority="high">
+      </figure>
     </div>
   </section>
 
@@ -627,19 +645,18 @@ figcaption{font-size:.78rem;letter-spacing:.05em;color:var(--muted);margin-top:.
 
   <section class="tint">
     <div class="wrap two lean">
-      <figure class="portrait" style="margin:0">
-        <img src="https://i.postimg.cc/XYv84Wwp/eo7a2474-23644779.jpg" alt="Jade Matthew" loading="lazy">
-      </figure>
       <div>
         <div class="cue"><span>Who you would be working with</span></div>
         <h2>Jade Matthew.</h2>
-        <p style="margin-top:1.2rem">Performance psychologist and communication specialist. Award winning actress. Clinical hypnotherapist and Master NLP Practitioner. Lecturer at LAMDA. Creator of the ICOP Method.</p>
-        <p>Eighteen years performing professionally under real pressure, and eighteen years working out why capable people lose access to themselves at exactly the wrong moment. The coaching sits where those two things meet.</p>
-        <div class="stat-row">
+        <div class="stat-row" style="margin-top:1.8rem">
           <div class="stat"><b>500+</b><span>senior leaders coached</span></div>
           <div class="stat"><b>18</b><span>years in practice</span></div>
           <div class="stat"><b>ICOP</b><span>method creator</span></div>
         </div>
+      </div>
+      <div>
+        <p>Performance psychologist and communication specialist. Award winning actress. Clinical hypnotherapist and Master NLP Practitioner. Lecturer at LAMDA. Creator of the ICOP Method.</p>
+        <p>Eighteen years performing professionally under real pressure, and eighteen years working out why capable people lose access to themselves at exactly the wrong moment. The coaching sits where those two things meet.</p>
         <div class="btns"><a class="btn ghost" href="#/about" data-nav>More about Jade</a></div>
       </div>
     </div>
@@ -683,10 +700,10 @@ figcaption{font-size:.78rem;letter-spacing:.05em;color:var(--muted);margin-top:.
         <div class="eco-row"><div class="name">Jade Matthew</div><p>The person, the authority and the practitioner.</p></div>
         <div class="eco-row"><div class="name">The ICOP Method</div><p>The intellectual property. Eighteen years of performance, psychology and communication work in one framework.</p></div>
         <div class="eco-row"><div class="name">Coaching and speaking</div><p>The human work. Private programmes, keynotes and corporate delivery.</p></div>
-        <div class="eco-row"><div class="name">SESSION</div><p>The platform that carries the method beyond the room.</p></div>
-        <div class="eco-row"><div class="name">Mara</div><p>The interactive coach inside SESSION, where people practise between sessions.</p></div>
+        <div class="eco-row"><div class="name"><img class="wordmark-inline" style="height:.8em" src="assets/session-wordmark-white.png" alt="Session"></div><p>The platform that carries the method beyond the room.</p></div>
+        <div class="eco-row"><div class="name">Mara</div><p>The interactive coach inside Session, where people practise between sessions.</p></div>
       </div>
-      <div class="btns"><a class="btn ghost" href="#/session" data-nav>How Jade and SESSION fit together</a></div>
+      <div class="btns"><a class="btn ghost" href="#/session" data-nav>How Jade and Session fit together</a></div>
     </div>
   </section>
 
@@ -1202,12 +1219,12 @@ figcaption{font-size:.78rem;letter-spacing:.05em;color:var(--muted);margin-top:.
         <div class="offer">
           <div><div class="meta">Licence</div></div>
           <div>
-            <h3>Session and Mara across the organisation</h3>
+            <h3><img class="wordmark-inline" src="assets/session-wordmark-black.png" alt="Session"> and Mara across the organisation</h3>
             <p>Where appropriate, the work continues between sessions through Session and Mara. Camera on practice, scored across six areas, so progress is visible across a cohort rather than assumed.</p>
 
             <div data-video-block style="margin-top:1.8rem;max-width:560px">
               <div class="video-band" id="mara-video">
-                <div class="video-waiting">Mara commercial loads here once the video link is connected.</div>
+                <div class="video-waiting">Loading.</div>
               </div>
               <div class="video-caption">Mara in 30 seconds</div>
             </div>
@@ -1318,7 +1335,7 @@ figcaption{font-size:.78rem;letter-spacing:.05em;color:var(--muted);margin-top:.
         <div><h4>Mind</h4><p>The narrator. Attention, meaning and what you are telling yourself while you speak.</p></div>
         <div><h4>Impact</h4><p>The result. How other people actually experience you, measured rather than assumed.</p></div>
       </div>
-      <div class="ph"><b>Confirm before publishing</b> · these are working names for the five systems, taken from the language already used across SESSION. Replace with your canonical names and definitions.</div>
+      <div class="ph"><b>Confirm before publishing</b> · these are working names for the five systems, taken from the language already used across Session. Replace with your canonical names and definitions.</div>
     </div>
   </section>
 
@@ -1345,10 +1362,10 @@ figcaption{font-size:.78rem;letter-spacing:.05em;color:var(--muted);margin-top:.
         <h2>In the room, and between the rooms.</h2>
       </div>
       <div>
-        <p>I deliver ICOP directly through coaching, workshops and keynotes. SESSION carries the same method into the days between, so people practise the moment before they have to live it.</p>
+        <p>I deliver ICOP directly through coaching, workshops and keynotes. Session carries the same method into the days between, so people practise the moment before they have to live it.</p>
         <p>That combination is the point. Human work changes the pattern. Practice makes the change survive contact with a real room.</p>
         <p>And the method does not stop at the office door. The last link in the chain is how other people experience you, which is another way of saying your relationships. Leaders who fix this at work usually notice it first at home.</p>
-        <div class="btns"><a class="btn ghost" href="#/session" data-nav>See how SESSION works</a></div>
+        <div class="btns"><a class="btn ghost" href="#/session" data-nav>See how Session works</a></div>
       </div>
     </div>
   </section>
@@ -1466,7 +1483,7 @@ figcaption{font-size:.78rem;letter-spacing:.05em;color:var(--muted);margin-top:.
         <p>I trained as an actor and worked professionally in television, film, radio and voice for eighteen years, across the BBC, HBO, Netflix and Channel 4. Performance under pressure was not a topic I studied. It was the job.</p>
         <p>Alongside that I qualified as a clinical hypnotherapist and Master NLP Practitioner, because the interesting question was never how to stand or where to look. It was why capable people lose access to themselves at exactly the wrong moment.</p>
         <p>Those two threads became the ICOP Method. Over the last eighteen years I have used it with more than five hundred people, from actors and students at LAMDA to founders, executives and leaders who have to walk into rooms that decide things.</p>
-        <p>SESSION is the most recent part of it. I built the platform myself so the method could reach people between sessions, and so the practice could keep happening on the days I am not there.</p>
+        <p>Session is the most recent part of it. I built the platform myself so the method could reach people between sessions, and so the practice could keep happening on the days I am not there.</p>
       </div>
     </div>
   </section>
@@ -1524,7 +1541,7 @@ figcaption{font-size:.78rem;letter-spacing:.05em;color:var(--muted);margin-top:.
       </div>
 
       <div id="book-slot" class="book-slot">
-        <div class="waiting">Booking calendar loads here once the link is connected. Until then, use the form below and I will reply with times.</div>
+        <div class="waiting">Loading the calendar. If it does not appear, use the button above or the form below.</div>
       </div>
 
       <div class="book-or"><span>Or send a message</span></div>
@@ -1547,7 +1564,7 @@ figcaption{font-size:.78rem;letter-spacing:.05em;color:var(--muted);margin-top:.
         </div>
         <div class="field"><label for="m">The situation, and when it happens</label><textarea id="m" placeholder="The room, the conversation, the event, the deadline."></textarea></div>
         <div class="btns" style="margin-top:0"><button class="btn" type="button" id="send">Send enquiry</button></div>
-        <p class="note" id="formnote">Prototype only. Connect to your form handler before this goes live.</p>
+        <p class="note" id="formnote">I reply to every enquiry personally, usually within two working days.</p>
       </form>
     </div>
   </section>
@@ -1590,7 +1607,7 @@ figcaption{font-size:.78rem;letter-spacing:.05em;color:var(--muted);margin-top:.
       </div>
       <div>
         <img src="assets/session-wordmark-white.png" alt="Session" style="width:104px;height:auto;opacity:.75;margin-bottom:1rem">
-        <h4>Session and Mara</h4>
+        <h4 class="sr-only">Session and Mara</h4>
         <ul>
           <li><a href="#/session" data-nav>How it fits together</a></li>
           <li><a href="https://mara.thesessionlab.com" target="_blank" rel="noopener">Try Mara</a></li>
@@ -1682,7 +1699,7 @@ var PRICE_SUB = "Six session block from £1,500 · ten from £2,500 · payment p
       speaking:'Speaking · Jade Matthew',
       corporate:'Corporate · Jade Matthew',
       icop:'The ICOP Method · Jade Matthew',
-      session:'SESSION · Jade Matthew',
+      session:'Session · Jade Matthew',
       about:'About · Jade Matthew',
       enquire:'Enquire · Jade Matthew'
     };
@@ -1845,7 +1862,22 @@ var PRICE_SUB = "Six session block from £1,500 · ten from £2,500 · payment p
   var send = document.getElementById('send');
   if(send){
     send.addEventListener('click', function(){
-      document.getElementById('formnote').textContent = 'Prototype only. Nothing was sent. Connect a form handler before launch.';
+      var v = function(id){ var e = document.getElementById(id); return e ? e.value.trim() : ''; };
+      var name = v('n'), email = v('e'), org = v('o'), topic = v('t'), msg = v('m');
+      var note = document.getElementById('formnote');
+      if(!name || !email){
+        note.textContent = 'Please add your name and email so I can reply.';
+        return;
+      }
+      var body = 'Name: ' + name +
+                 '\nEmail: ' + email +
+                 (org ? '\nOrganisation and role: ' + org : '') +
+                 '\nEnquiring about: ' + topic +
+                 '\n\n' + (msg || '');
+      window.location.href = 'mailto:hello@thesessionlab.com' +
+        '?subject=' + encodeURIComponent('Enquiry from sessionwithjade.com · ' + topic) +
+        '&body=' + encodeURIComponent(body);
+      note.textContent = 'Opening your email app. If nothing happens, write to hello@thesessionlab.com.';
     });
   }
 
@@ -1857,6 +1889,9 @@ var PRICE_SUB = "Six session block from £1,500 · ten from £2,500 · payment p
       sticky.classList.toggle('hide', entries[0].isIntersecting);
     }, {rootMargin:'0px 0px -20% 0px'}).observe(foot);
   }
+
+  // internal notes: hidden from visitors, visible with ?draft=1
+  if(location.search.indexOf('draft') !== -1){ document.body.classList.add('draft'); }
 
   document.getElementById('yr').textContent = new Date().getFullYear();
   route();
