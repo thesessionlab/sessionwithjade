@@ -12,10 +12,13 @@
 <meta property="og:url" content="https://sessionwithjade.com/">
 <meta property="og:title" content="Session with Jade · Performance, speaking and presence coach">
 <meta property="og:description" content="Performance, speaking, presence and relationships. Coaching for leaders and entrepreneurs who have to deliver when it matters, at work and in life.">
-<meta property="og:image" content="https://i.postimg.cc/XYv84Wwp/eo7a2474-23644779.jpg">
+<meta property="og:image" content="https://sessionwithjade.com/assets/og-image.jpg">
 <meta name="twitter:card" content="summary_large_image">
+<meta property="og:image:alt" content="Jade Matthew">
 <meta name="theme-color" content="#0a0a0a">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 32 32\'%3E%3Crect width=\'32\' height=\'32\' fill=\'%230a0a0a\'/%3E%3Ctext x=\'16\' y=\'23\' font-family=\'Georgia,serif\' font-size=\'20\' fill=\'%23b8965a\' text-anchor=\'middle\'%3ES%3C/text%3E%3C/svg%3E">
+<link rel="icon" type="image/png" sizes="320x320" href="assets/session-mark.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/session-mark.png">
+<link rel="alternate icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230a0a0a'/%3E%3Ctext x='16' y='23' font-family='Georgia,serif' font-size='20' fill='%23b8965a' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
@@ -216,6 +219,98 @@ footer a:hover{opacity:1;color:var(--gold-lt)}
 .dark .ph{color:var(--muted-dark)}
 .ph b{font-weight:500;color:var(--gold)}
 
+/* ---------- logo strips ---------- */
+.logo-row{display:flex;flex-wrap:wrap;align-items:center;gap:clamp(1.6rem,4vw,3.2rem);margin-top:1.4rem}
+.logo-row img{height:clamp(20px,2.4vw,30px);width:auto;opacity:.55;transition:opacity .25s}
+.logo-row img:hover{opacity:.95}
+.logo-row.small img{height:clamp(17px,2vw,24px)}
+.logo-group{margin-top:2.6rem}
+.logo-group:first-of-type{margin-top:2rem}
+.logo-label{font-size:.78rem;letter-spacing:.06em;color:var(--muted-dark);padding-bottom:.9rem;border-bottom:1px solid var(--rule-dark)}
+.tint .logo-label,section:not(.dark) .logo-label{color:var(--muted);border-color:var(--rule)}
+section:not(.dark) .logo-row img{filter:invert(1)}
+
+/* ---------- session wordmark in headings ---------- */
+.wordmark{display:block;height:clamp(30px,4.4vw,46px);width:auto;margin:0}
+h2 .wordmark,h3 .wordmark{margin-bottom:.2rem}
+.wordmark-lead{margin-bottom:1.2rem}
+
+/* ---------- sticky mobile cta ---------- */
+.sticky-cta{position:fixed;left:0;right:0;bottom:0;z-index:70;display:none;padding:.7rem var(--pad) calc(.7rem + env(safe-area-inset-bottom));background:rgba(10,10,10,.96);backdrop-filter:blur(10px);border-top:1px solid var(--rule-dark);transition:transform .3s}
+.sticky-cta.hide{transform:translateY(110%)}
+.sticky-cta .btn{width:100%;text-align:center;padding-block:.9rem}
+.sticky-cta .sub{font-size:.72rem;letter-spacing:.04em;color:var(--muted-dark);text-align:center;margin-top:.5rem}
+@media (max-width:760px){.sticky-cta{display:block}body{padding-bottom:0}}
+
+/* ---------- proof bar ---------- */
+.logos{display:flex;flex-wrap:wrap;gap:.6rem 1.6rem;align-items:center;margin-top:1.4rem}
+.logos span{font-family:var(--serif);font-size:1.05rem;color:var(--muted-dark);letter-spacing:.03em}
+.hero-proof{margin-top:2.6rem;padding-top:1.8rem;border-top:1px solid var(--rule-dark);max-width:56ch}
+.hero-proof p{font-family:var(--serif);font-style:italic;font-size:1.15rem;line-height:1.42;color:#e6e1d9}
+.hero-proof .attrib{margin-top:.7rem}
+
+/* ---------- faq ---------- */
+.faq{border-top:1px solid var(--rule);margin-top:2.5rem}
+.dark .faq{border-color:var(--rule-dark)}
+.faq details{border-bottom:1px solid var(--rule);padding:1.2rem 0}
+.dark .faq details{border-color:var(--rule-dark)}
+.faq summary{cursor:pointer;font-family:var(--serif);font-size:1.25rem;list-style:none;display:flex;justify-content:space-between;gap:1.5rem;align-items:baseline}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";color:var(--gold);font-family:var(--sans);font-size:1.1rem;flex:0 0 auto}
+.faq details[open] summary::after{content:"−"}
+.faq details p{margin-top:.9rem;font-size:.98rem;color:var(--muted);max-width:64ch}
+.dark .faq details p{color:var(--muted-dark)}
+
+/* ---------- video ---------- */
+.video-band{border:1px solid var(--rule-dark);background:#000;position:relative;aspect-ratio:16/9;overflow:hidden}
+.video-band iframe,.video-band video{position:absolute;inset:0;width:100%;height:100%;border:0;display:block}
+.video-caption{font-size:.82rem;letter-spacing:.05em;color:var(--muted-dark);margin-top:.9rem}
+.video-waiting{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;text-align:center;padding:2rem;color:var(--muted-dark);font-size:.88rem;background:var(--ink-panel)}
+
+/* ---------- icop diagram ---------- */
+.icop-wrap{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:clamp(2rem,4vw,4rem);align-items:center;margin-top:2.5rem}
+.icop-svg{width:100%;height:auto;display:block}
+.icop-arc{cursor:pointer;transition:opacity .25s}
+.icop-arc:hover{opacity:.82}
+.icop-label{pointer-events:none;font-family:'Jost',sans-serif;font-size:15px;letter-spacing:.14em;fill:#0a0a0a}
+.icop-axis{font-family:'Jost',sans-serif;font-size:12px;letter-spacing:.1em;fill:#9a938a}
+.icop-ring[aria-selected="true"] .icop-arc{opacity:1}
+.icop-detail{min-height:230px}
+.icop-detail .stage{font-family:var(--serif);font-style:italic;color:var(--gold);font-size:1.05rem;margin-bottom:.3rem}
+.icop-detail h3{font-size:clamp(1.5rem,2.4vw,2.1rem);margin-bottom:.8rem}
+.icop-detail p{color:#cfc9c0}
+.icop-tabs{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.8rem}
+.icop-tabs button{font-family:var(--sans);font-size:.8rem;letter-spacing:.08em;padding:.55rem 1rem;background:transparent;color:var(--muted-dark);border:1px solid var(--rule-dark);cursor:pointer;transition:all .2s}
+.icop-tabs button:hover{color:var(--paper)}
+.icop-tabs button[aria-pressed="true"]{background:var(--gold);border-color:var(--gold);color:var(--ink)}
+@media (max-width:860px){.icop-wrap{grid-template-columns:minmax(0,1fr)}.icop-detail{min-height:0}}
+
+/* ---------- product cards ---------- */
+.products{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule);margin-top:2.8rem}
+.dark .products{background:var(--rule-dark);border-color:var(--rule-dark)}
+.product{background:var(--paper);padding:clamp(1.6rem,3vw,2.4rem);display:flex;flex-direction:column}
+.tint .product{background:var(--paper-alt)}
+.dark .product{background:var(--ink)}
+.product .kicker{font-size:.76rem;letter-spacing:.08em;color:var(--muted);margin-bottom:1rem}
+.product h3{font-size:clamp(1.4rem,2vw,1.75rem);line-height:1.15}
+.product .line{font-family:var(--serif);font-style:italic;color:var(--gold);font-size:1.05rem;margin-top:.5rem}
+.product .who{font-size:.9rem;color:var(--muted);margin-top:1rem}
+.product ul{list-style:none;margin:1.4rem 0 0;padding:0;font-size:.9rem;color:var(--muted)}
+.product ul li{padding-left:1.1rem;position:relative;margin-bottom:.4rem}
+.product ul li::before{content:"";position:absolute;left:0;top:.72em;width:5px;height:1px;background:var(--gold)}
+.product .foot{margin-top:auto;padding-top:1.8rem}
+.price{display:flex;align-items:baseline;gap:.5rem;padding-top:1.4rem;border-top:1px solid var(--rule);margin-top:1.6rem}
+.dark .price{border-color:var(--rule-dark)}
+.price b{font-family:var(--serif);font-weight:400;font-size:1.9rem;line-height:1;color:var(--ink)}
+.dark .price b{color:var(--paper)}
+.price span{font-size:.82rem;color:var(--muted)}
+.product .btn{width:100%;text-align:center;margin-top:1.4rem}
+.product.wide{grid-column:1 / -1}
+.price-sub{font-size:.78rem;color:var(--muted);margin-top:.55rem;line-height:1.45}
+.dark .price-sub{color:var(--muted-dark)}
+.pricing-note{font-size:.88rem;color:var(--muted);margin-top:2rem;max-width:60ch}
+@media (max-width:820px){.products{grid-template-columns:minmax(0,1fr)}}
+
 /* ---------- booking ---------- */
 .book-band{border:1px solid var(--gold);padding:clamp(1.6rem,4vw,2.6rem)}
 .dark .book-band{border-color:var(--gold)}
@@ -311,6 +406,12 @@ figcaption{font-size:.78rem;letter-spacing:.05em;color:var(--muted);margin-top:.
         <a class="btn" data-book>Book a <span data-mins>20</span> minute discovery call</a>
         <a class="btn ghost" href="#/coaching" data-nav>How I work</a>
       </div>
+      <p class="note reveal" style="color:var(--muted-dark);margin-top:.9rem">Free · no obligation · a straight answer about whether I can help</p>
+
+      <div class="hero-proof reveal">
+        <p>The most powerful coaching I've done. Usually I can't stick with it, but this approach has changed so much so quickly, I can't believe it.</p>
+        <div class="attrib">Ciara · CEO · cosmetics</div>
+      </div>
     </div>
   </section>
 
@@ -360,59 +461,97 @@ figcaption{font-size:.78rem;letter-spacing:.05em;color:var(--muted);margin-top:.
   <section>
     <div class="wrap">
       <div class="cue"><span>Ways to work together</span></div>
-      <h2 style="max-width:24ch">There isn't a one size fits all programme.</h2>
-      <p class="lede" style="margin-top:1.2rem;max-width:46ch">We start with you, the situation you are facing and what you want to change.</p>
-      <div style="margin-top:2.5rem">
-        <div class="offer">
-          <div><div class="meta">One to one</div></div>
-          <div>
-            <h3>Performance, communication and leadership</h3>
-            <div class="who">Become the person you know you can be in the room.</div>
-            <p>For founders, executives, leaders and entrepreneurs who know they have more to give but cannot always reach it when the pressure is on.</p>
+      <h2 style="max-width:24ch">Five ways in.</h2>
+      <p class="lede" style="margin-top:1.2rem;max-width:48ch">Every programme is tailored, so these are starting points rather than packages. We decide the shape on the call.</p>
+
+      <div class="products">
+        <div class="product">
+          <div class="kicker">One to one</div>
+          <h3>Performance, communication and leadership</h3>
+          <div class="line">Become the person you know you can be in the room.</div>
+          <div class="who">Founders, executives, leaders and entrepreneurs who know they have more to give.</div>
+          <ul>
+            <li>Executive presence and authority</li>
+            <li>Communication and influence</li>
+            <li>Confidence under pressure</li>
+            <li>Difficult conversations and negotiation</li>
+          </ul>
+          <div class="foot">
+            <div class="kicker" style="margin:0 0 .2rem">Block of 6 to 10 sessions</div>
+            <div class="price" data-price="leadership"></div>
+            <a class="btn" data-book>Apply</a>
           </div>
         </div>
-        <div class="offer">
-          <div><div class="meta">One to one</div></div>
-          <div>
-            <h3>Speaking and presentation coaching</h3>
-            <div class="who">Do not just prepare the presentation. Prepare yourself.</div>
-            <p>For the keynote, the investor pitch, the board meeting or the presentation you have been dreading for weeks.</p>
+
+        <div class="product">
+          <div class="kicker">One to one</div>
+          <h3>Speaking and presentation</h3>
+          <div class="line">Do not just prepare the presentation. Prepare yourself.</div>
+          <div class="who">Anyone with a keynote, pitch, board meeting or panel coming up.</div>
+          <ul>
+            <li>Message, structure and delivery</li>
+            <li>Voice, body and energy</li>
+            <li>Rehearsal under deliberate pressure</li>
+            <li>A warm up you keep for good</li>
+          </ul>
+          <div class="foot">
+            <div class="kicker" style="margin:0 0 .2rem">Block of 6 to 10 sessions</div>
+            <div class="price" data-price="speaking"></div>
+            <a class="btn" data-book>Apply</a>
           </div>
         </div>
-        <div class="offer">
-          <div><div class="meta">One to one</div></div>
-          <div>
-            <h3>Stress, anxiety and mindset</h3>
-            <div class="who">Manage your internal state instead of being managed by it.</div>
-            <p>Mindset coaching, NLP, hypnotherapy, breathwork and performance techniques, for when your mind never quite switches off. Delivered by a qualified clinical hypnotherapist.</p>
+
+        <div class="product">
+          <div class="kicker">One to one</div>
+          <h3>Stress, anxiety and mindset</h3>
+          <div class="line">Manage your internal state instead of being managed by it.</div>
+          <div class="who">People whose mind and body feel permanently under pressure.</div>
+          <ul>
+            <li>Hypnotherapy, NLP and breathwork</li>
+            <li>Overthinking and mental loops</li>
+            <li>Recovery and switching off</li>
+            <li>Regulation you can use in real life</li>
+          </ul>
+          <div class="foot">
+            <div class="kicker" style="margin:0 0 .2rem">Block of 6 to 10 sessions</div>
+            <div class="price" data-price="mindset"></div>
+            <a class="btn" data-book>Apply</a>
           </div>
         </div>
-        <div class="offer">
-          <div><div class="meta">One to one</div></div>
-          <div>
-            <h3>Confidence, presence and relationships</h3>
-            <div class="who">Change how you experience yourself, and how others experience you.</div>
-            <p>The meeting where you do not speak. The boundary you do not set. The conversation you keep avoiding.</p>
+
+        <div class="product">
+          <div class="kicker">One to one</div>
+          <h3>Confidence, presence and relationships</h3>
+          <div class="line">Change how you experience yourself, and how others experience you.</div>
+          <div class="who">People who want this to hold everywhere, not only at work.</div>
+          <ul>
+            <li>Self confidence and self trust</li>
+            <li>Boundaries and difficult conversations</li>
+            <li>Charisma, listening and connection</li>
+            <li>Recurring relationship patterns</li>
+          </ul>
+          <div class="foot">
+            <div class="kicker" style="margin:0 0 .2rem">Block of 6 to 10 sessions</div>
+            <div class="price" data-price="confidence"></div>
+            <a class="btn" data-book>Apply</a>
           </div>
         </div>
-        <div class="offer">
-          <div><div class="meta">Events</div></div>
-          <div>
-            <h3>Keynotes and conference speaking</h3>
-            <div class="who">A talk about the gap between knowing and doing.</div>
-            <p>30 to 60 minutes with live demonstration, or a 90 minute interactive session. Also available to host, chair or sit on a panel.</p>
-          </div>
-        </div>
-        <div class="offer">
-          <div><div class="meta">Organisations</div></div>
-          <div>
-            <h3>Corporate and team programmes</h3>
-            <div class="who">The same methodology, brought into your organisation.</div>
-            <p>Bespoke workshops, leadership programmes and executive coaching, with Session and Mara alongside where it helps.</p>
+
+        <div class="product wide">
+          <div class="kicker">Organisations</div>
+          <h3>Keynotes, workshops and team programmes</h3>
+          <div class="line">The same methodology, brought into your organisation.</div>
+          <div class="who">Leadership teams, conferences and whole cohorts, with Session and Mara alongside where it helps.</div>
+          <div class="foot">
+            <div class="price" data-price="corporate"></div>
+            <a class="btn ghost" href="#/corporate" data-nav>Corporate and keynotes</a>
           </div>
         </div>
       </div>
-      <div class="btns"><a class="btn" href="#/coaching" data-nav>See how each one works</a><a class="btn ghost" href="#/speaking" data-nav>Book a keynote</a><a class="btn ghost" href="#/corporate" data-nav>For organisations</a></div>
+
+      <p class="pricing-note">Coaching is by application and works in blocks of six to ten sessions. Real change needs repetition, so I do not take single sessions at the start. Once you have completed a block, individual top up sessions are available whenever you need them. Sessions start at £250, so a six session block begins at £1,500. We start with a free <span data-mins>20</span> minute discovery call, and you get the full price in writing before you commit to anything.</p>
+
+      <div class="btns"><a class="btn ghost" href="#/coaching" data-nav>See what each one involves</a></div>
     </div>
   </section>
 
@@ -449,6 +588,40 @@ figcaption{font-size:.78rem;letter-spacing:.05em;color:var(--muted);margin-top:.
           <div class="attrib">Jack · Head of Music</div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <section class="dark hair">
+    <div class="wrap">
+      <div class="cue"><span>Where the work comes from</span></div>
+      <h2 style="max-width:22ch">Eighteen years performing under real pressure.</h2>
+      <p style="margin-top:1.2rem;max-width:58ch">I did not learn this from a coaching qualification. I learned it on set, on air and in the booth, where the take has to land and there is nowhere to hide.</p>
+
+      <div class="logo-group">
+        <div class="logo-label">Screen, television and radio credits</div>
+        <div class="logo-row">
+            <img src="assets/logos/bbc.png" alt="BBC" loading="lazy">
+            <img src="assets/logos/netflix.png" alt="Netflix" loading="lazy">
+            <img src="assets/logos/hbo.png" alt="HBO" loading="lazy">
+            <img src="assets/logos/channel4.png" alt="Channel 4" loading="lazy">
+            <img src="assets/logos/itv.png" alt="ITV" loading="lazy">
+            <img src="assets/logos/sky.png" alt="Sky" loading="lazy">
+            <img src="assets/logos/eastenders.png" alt="EastEnders" loading="lazy">
+        </div>
+      </div>
+
+      <div class="logo-group">
+        <div class="logo-label">Voice and audio direction clients</div>
+        <div class="logo-row small">
+            <img src="assets/logos/google.png" alt="Google" loading="lazy">
+            <img src="assets/logos/adidas.png" alt="Adidas" loading="lazy">
+            <img src="assets/logos/braun.png" alt="Braun" loading="lazy">
+            <img src="assets/logos/hellofresh.png" alt="HelloFresh" loading="lazy">
+            <img src="assets/logos/uefa.png" alt="UEFA Champions League" loading="lazy">
+        </div>
+      </div>
+
+      <p class="note" style="color:var(--muted-dark);margin-top:2.5rem;max-width:60ch">Logos indicate productions and clients I have worked on as a performer, voice artist and audio director. They do not imply endorsement of my coaching.</p>
     </div>
   </section>
 
@@ -492,7 +665,7 @@ figcaption{font-size:.78rem;letter-spacing:.05em;color:var(--muted);margin-top:.
       </div>
       <div>
         <div class="cue"><span>The platform</span></div>
-        <h2>Session.</h2>
+        <h2><img class="wordmark" src="assets/session-wordmark-white.png" alt="Session"></h2>
         <p class="lede" style="margin-top:1.2rem">The technology that brings the ICOP Method to life.</p>
         <p>Session is the company and the platform. Mara lives inside it, alongside the corporate programmes and the free tools. Individual leaders use it on their own. Organisations license it for their teams.</p>
         <div class="btns">
@@ -546,7 +719,7 @@ figcaption{font-size:.78rem;letter-spacing:.05em;color:var(--muted);margin-top:.
   <section id="prog-1" class="hair">
     <div class="wrap">
       <div class="prog-head">
-        <div class="prog-label">One to one</div>
+        <div class="prog-label">One to one · block of 6 to 10 sessions</div>
         <h2>Performance, communication and leadership</h2>
         <p class="lede">Become the person you know you can be in the room.</p>
       </div>
@@ -594,7 +767,13 @@ figcaption{font-size:.78rem;letter-spacing:.05em;color:var(--muted);margin-top:.
         <p>I started communication and confidence coaching with Jade and it was an amazing experience. I discovered where the lack of confidence was coming from, worked on personal and professional issues I was having, and learned voice skills to support my communication and my accent.</p>
         <div class="attrib">Jacques · Executive · Hilton</div>
       </div>
-      <div class="btns"><a class="btn" data-book>Book a <span data-mins>20</span> minute discovery call</a></div>
+      <div class="book-band" style="margin-top:2.4rem;display:flex;flex-wrap:wrap;gap:1.5rem 2.5rem;align-items:center;justify-content:space-between">
+        <div>
+          <div class="kicker" style="margin-bottom:.5rem">Block of 6 to 10 sessions · online or in person, London</div>
+          <div class="price" data-price="leadership" style="border:0;padding:0;margin:0"></div>
+        </div>
+        <a class="btn" data-book>Apply</a>
+      </div>
     </div>
   </section>
 
@@ -602,7 +781,7 @@ figcaption{font-size:.78rem;letter-spacing:.05em;color:var(--muted);margin-top:.
   <section id="prog-2" class="tint">
     <div class="wrap">
       <div class="prog-head">
-        <div class="prog-label">One to one · intensive or programme</div>
+        <div class="prog-label">One to one · block of 6 to 10 sessions</div>
         <h2>Speaking and presentation coaching</h2>
         <p class="lede">Do not just prepare the presentation. Prepare yourself.</p>
       </div>
@@ -610,7 +789,7 @@ figcaption{font-size:.78rem;letter-spacing:.05em;color:var(--muted);margin-top:.
         <div>
           <p>For founders, executives, experts, speakers and professionals who need to communicate something important, and want to be certain they can deliver it.</p>
           <p>A keynote. An investor pitch. A conference presentation. A board meeting. A panel. A media appearance. Or a presentation you have been dreading for weeks.</p>
-          <p>We take you from knowing what you want to say to owning the room while you say it.</p>
+          <p>We take you from knowing what you want to say to owning the room while you say it. This runs as a block of six to ten sessions, paced around your event rather than crammed into the week before it.</p>
         </div>
         <div>
           <h4 class="sub">What performers do before they go on</h4>
@@ -645,7 +824,13 @@ figcaption{font-size:.78rem;letter-spacing:.05em;color:var(--muted);margin-top:.
         <div class="attrib">Martin · Creative Director</div>
       </div>
 
-      <div class="btns"><a class="btn" data-book>Book a <span data-mins>20</span> minute discovery call</a></div>
+      <div class="book-band" style="margin-top:2.4rem;display:flex;flex-wrap:wrap;gap:1.5rem 2.5rem;align-items:center;justify-content:space-between">
+        <div>
+          <div class="kicker" style="margin-bottom:.5rem">Block of 6 to 10 sessions · paced to your event</div>
+          <div class="price" data-price="speaking" style="border:0;padding:0;margin:0"></div>
+        </div>
+        <a class="btn" data-book>Apply</a>
+      </div>
     </div>
   </section>
 
@@ -653,7 +838,7 @@ figcaption{font-size:.78rem;letter-spacing:.05em;color:var(--muted);margin-top:.
   <section id="prog-3">
     <div class="wrap">
       <div class="prog-head">
-        <div class="prog-label">One to one · programme</div>
+        <div class="prog-label">One to one · block of 6 to 10 sessions</div>
         <h2>Stress, anxiety and mindset</h2>
         <p class="lede">Learn to manage your internal state instead of being managed by it.</p>
       </div>
@@ -711,7 +896,7 @@ figcaption{font-size:.78rem;letter-spacing:.05em;color:var(--muted);margin-top:.
   <section id="prog-4" class="dark">
     <div class="wrap">
       <div class="prog-head">
-        <div class="prog-label">One to one · programme</div>
+        <div class="prog-label">One to one · block of 6 to 10 sessions</div>
         <h2>Confidence, presence and relationships</h2>
         <p class="lede">Change the way you experience yourself, and the way other people experience you.</p>
       </div>
@@ -740,7 +925,14 @@ figcaption{font-size:.78rem;letter-spacing:.05em;color:var(--muted);margin-top:.
       </ul>
 
       <p style="margin-top:2rem">Not to turn you into someone else. Not to give you a script for how a confident person behaves. To help you feel more comfortable being fully yourself.</p>
-      <div class="btns"><a class="btn" data-book>Book a <span data-mins>20</span> minute discovery call</a></div>
+      <div class="book-band" style="margin-top:2.4rem;display:flex;flex-wrap:wrap;gap:1.5rem 2.5rem;align-items:center;justify-content:space-between">
+        <div>
+          <div class="kicker" style="margin-bottom:.5rem">Block of 6 to 10 sessions · online or in person, London</div>
+          <div class="price" data-price="confidence" style="border:0;padding:0;margin:0"></div>
+        </div>
+        <a class="btn" data-book>Apply</a>
+      </div>
+
     </div>
   </section>
 
@@ -770,9 +962,88 @@ figcaption{font-size:.78rem;letter-spacing:.05em;color:var(--muted);margin-top:.
 
   <section>
     <div class="wrap">
+      <div class="cue"><span>Investment</span></div>
+      <h2 style="max-width:22ch">How pricing works.</h2>
+      <div class="two" style="margin-top:2rem">
+        <div>
+          <p>Coaching is booked in blocks of six to ten sessions. I do not take single sessions to begin with, and that is deliberate rather than commercial. One session produces insight. Insight without repetition disappears by the following week. The block is what makes the change hold.</p>
+          <p>Six is enough to shift a specific pattern before a specific event. Ten is right when the work is deeper, or when you want it to hold across your working life rather than one moment in it. We decide which on the call.</p>
+          <p>Once you have completed a block, single top up sessions are available whenever you need them. Most people use them before something that matters.</p>
+          <p>Sessions start at £250, which puts a six session block at £1,500 and ten at £2,500. Longer or more intensive work is quoted individually. Corporate and team programmes are priced separately.</p>
+        </div>
+        <div>
+          <ul class="spec" style="font-size:1rem">
+            <li>Sessions from £250</li>
+            <li>Six session block from £1,500, ten from £2,500</li>
+            <li>Free <span data-mins>20</span> minute discovery call, no obligation</li>
+            <li>A written proposal with scope and price before you commit</li>
+            <li>Blocks of six to ten sessions, paced to your diary</li>
+            <li>Single top up sessions after your first block</li>
+            <li>Payment plans available on every block</li>
+            <li>Session and Mara included throughout</li>
+            <li>Corporate and team work quoted separately</li>
+          </ul>
+        </div>
+      </div>
+      <div class="hair" style="margin:3rem 0 2.5rem"></div>
+      <div class="cue"><span>Before you apply</span></div>
+      <h2 style="max-width:26ch">Who this works for, and who it does not.</h2>
+      <div class="two" style="margin-top:2rem">
+        <div>
+          <h4 class="sub">This is for you if</h4>
+          <ul class="spec" style="font-size:1rem">
+            <li>You are already capable and it is not showing up in the room</li>
+            <li>You have a specific situation, event or relationship in mind</li>
+            <li>You are willing to practise between sessions, not just talk</li>
+            <li>You want to change the pattern, not manage around it</li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="sub">This is not for you if</h4>
+          <ul class="spec" style="font-size:1rem">
+            <li>You want presentation tips rather than a change in how you operate</li>
+            <li>You are looking for a single session to fix something on Friday</li>
+            <li>You are dealing with a diagnosed condition that needs clinical care</li>
+            <li>You want someone to agree with you rather than tell you the truth</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="faq" style="margin-top:3.5rem">
+        <details open>
+          <summary>Why can I not book a single session?</summary>
+          <p>Because it would not work, and I would rather turn down the money than take it for something that fails. One session produces insight. Insight without repetition is gone by the following week. Blocks of six to ten are what make a change hold under pressure. Once you have completed a block, single top up sessions are available whenever you want them.</p>
+        </details>
+        <details>
+          <summary>How much does it cost?</summary>
+          <p>Sessions start at £250, so a six session block begins at £1,500 and ten at £2,500. The exact figure depends on the length of the block and the scope of the work, and I quote after the discovery call, in writing, with nothing added later. Payment plans are available on every block.</p>
+        </details>
+        <details>
+          <summary>Does this work online?</summary>
+          <p>Yes. Most of my clients work with me online, including leaders in Berlin and further afield. Voice, body and presence work all translate to camera, and camera work is its own useful pressure. In person in London is available if you prefer it.</p>
+        </details>
+        <details>
+          <summary>Is this therapy?</summary>
+          <p>No. I am a qualified clinical hypnotherapist and I use those techniques where they are the right tool, but this is performance coaching. We work on what you do in rooms that matter. If something comes up that needs clinical care, I will say so and help you find the right person.</p>
+        </details>
+        <details>
+          <summary>Is it confidential?</summary>
+          <p>Completely. Nothing you say leaves the session, and I do not name clients without written permission. The testimonials on this site are published with consent.</p>
+        </details>
+        <details>
+          <summary>What if it does not work?</summary>
+          <p>You will know early. The first session maps where your performance actually breaks down, and you leave with that map whether or not you continue. If after the discovery call I do not think I am the right person, I will tell you then rather than sell you a block.</p>
+        </details>
+        <details>
+          <summary>How quickly can we start?</summary>
+          <p>Usually within a fortnight, sometimes sooner if you have something imminent. Book the discovery call and we will know within twenty minutes.</p>
+        </details>
+      </div>
+
+      <div class="hair" style="margin:3.5rem 0 2.5rem"></div>
       <h2 style="max-width:20ch">Not sure which one fits?</h2>
       <p class="lede" style="margin-top:1.2rem">Most people are not. Tell me the situation and I will tell you where to start, or whether I am the right person at all.</p>
-      <div class="btns"><a class="btn" data-book>Book a <span data-mins>20</span> minute discovery call</a><a class="btn ghost" href="#/corporate" data-nav>Corporate and teams</a></div>
+      <div class="btns"><a class="btn" data-book>Apply · book a <span data-mins>20</span> minute call</a><a class="btn ghost" href="#/corporate" data-nav>Corporate and teams</a></div>
     </div>
   </section>
 </div>
@@ -836,6 +1107,13 @@ figcaption{font-size:.78rem;letter-spacing:.05em;color:var(--muted);margin-top:.
       <div>
         <p>I am a working actor and voice artist with eighteen years of credits across the BBC, HBO, Netflix and Channel 4, and a BBC Audio Drama Award. I lecture at LAMDA. I have coached more than five hundred senior leaders, including individuals from Netflix, Deutsche Bank, Channel 4, Vodafone and Sky.</p>
         <p>Which means the demonstration is live. I can show an audience the difference between a person speaking and a person landing, in real time, using someone from the room.</p>
+        <div class="logo-row small" style="margin-top:1.8rem">
+          <img src="assets/logos/bbc.png" alt="BBC" loading="lazy">
+          <img src="assets/logos/netflix.png" alt="Netflix" loading="lazy">
+          <img src="assets/logos/hbo.png" alt="HBO" loading="lazy">
+          <img src="assets/logos/channel4.png" alt="Channel 4" loading="lazy">
+          <img src="assets/logos/sky.png" alt="Sky" loading="lazy">
+        </div>
         <div class="btns"><a class="btn" href="#/enquire" data-nav>Check availability</a></div>
       </div>
     </div>
@@ -926,9 +1204,27 @@ figcaption{font-size:.78rem;letter-spacing:.05em;color:var(--muted);margin-top:.
           <div>
             <h3>Session and Mara across the organisation</h3>
             <p>Where appropriate, the work continues between sessions through Session and Mara. Camera on practice, scored across six areas, so progress is visible across a cohort rather than assumed.</p>
-            <div class="btns" style="margin-top:1.4rem"><a class="btn ghost" href="https://mara.thesessionlab.com/brochure" target="_blank" rel="noopener">Open the Mara brochure</a></div>
+
+            <div data-video-block style="margin-top:1.8rem;max-width:560px">
+              <div class="video-band" id="mara-video">
+                <div class="video-waiting">Mara commercial loads here once the video link is connected.</div>
+              </div>
+              <div class="video-caption">Mara in 30 seconds</div>
+            </div>
+
+            <div class="btns" style="margin-top:1.4rem">
+              <a class="btn ghost" href="https://mara.thesessionlab.com/brochure" target="_blank" rel="noopener">Open the Mara brochure</a>
+              <a class="btn ghost" href="https://mara.thesessionlab.com" target="_blank" rel="noopener">See Mara</a>
+            </div>
           </div>
         </div>
+      </div>
+      <div class="book-band" style="margin-top:2.4rem;display:flex;flex-wrap:wrap;gap:1.5rem 2.5rem;align-items:center;justify-content:space-between">
+        <div>
+          <div class="kicker" style="margin-bottom:.5rem">Keynote, workshop, programme or licence</div>
+          <div class="price" data-price="corporate" style="border:0;padding:0;margin:0"></div>
+        </div>
+        <a class="btn" data-book>Request a quote</a>
       </div>
       <div class="ph"><b>To supply</b> · one anonymised case study with a measurable result, and the corporate rate card.</div>
     </div>
@@ -960,21 +1256,51 @@ figcaption{font-size:.78rem;letter-spacing:.05em;color:var(--muted);margin-top:.
   </section>
 
   <section class="dark" style="padding-top:0">
-    <div class="wrap two">
-      <div>
-        <h2 style="max-width:14ch">Inner to outer, in that order.</h2>
-        <p style="margin-top:1.4rem">Most training starts at the end of the chain, with words and posture. ICOP starts where the behaviour is actually produced and works forward.</p>
+    <div class="wrap">
+      <div class="two" style="align-items:start">
+        <div>
+          <h2 style="max-width:14ch">Inner to outer, in that order.</h2>
+        </div>
+        <div>
+          <p>Most training starts at the outside, with words and posture. ICOP starts where the behaviour is actually produced and works outward, so the change survives contact with a real room.</p>
+        </div>
       </div>
-      <div>
-        <div class="descent">
-          <div class="node fill"></div>
-          <div class="step-body"><div class="letter">I</div><h3>Identify</h3><p>Find the actual pattern. Not the story about the pattern. What happens, when, in which rooms, and what it costs you.</p></div>
-          <div class="node fill"></div>
-          <div class="step-body"><div class="letter">C</div><h3>Clear</h3><p>Interrupt what is producing it. Clinical hypnotherapy and NLP applied precisely, so the pattern stops running underneath everything else.</p></div>
-          <div class="node fill"></div>
-          <div class="step-body"><div class="letter">O</div><h3>Own</h3><p>Build practical tools to deliberately change your state and behaviour. Breath, body, voice, attention and mind, trained as a system you can enter on purpose.</p></div>
-          <div class="node"></div>
-          <div class="step-body"><div class="letter">P</div><h3>Perform</h3><p>Practise it in the situations that actually matter. Repetition under real pressure until it holds in the rooms that count, not only in the safe ones.</p></div>
+
+      <div class="icop-wrap">
+        <svg class="icop-svg" viewBox="0 0 620 350" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The ICOP Method as four concentric layers, from Identify at the centre to Perform at the outside">
+          <title>The ICOP Method</title>
+
+          <!-- rings, outermost first so inner ones sit on top -->
+          <g class="icop-ring" data-stage="4" aria-selected="false">
+            <path class="icop-arc" d="M 98 300 A 212 212 0 0 1 522 300" fill="none" stroke="#9a7c46" stroke-width="40"/>
+            <text class="icop-label" x="310" y="99" text-anchor="middle">PERFORM</text>
+          </g>
+          <g class="icop-ring" data-stage="3" aria-selected="false">
+            <path class="icop-arc" d="M 146 300 A 164 164 0 0 1 474 300" fill="none" stroke="#b8965a" stroke-width="40"/>
+            <text class="icop-label" x="310" y="147" text-anchor="middle">OWN</text>
+          </g>
+          <g class="icop-ring" data-stage="2" aria-selected="false">
+            <path class="icop-arc" d="M 194 300 A 116 116 0 0 1 426 300" fill="none" stroke="#c9a870" stroke-width="40"/>
+            <text class="icop-label" x="310" y="195" text-anchor="middle">CLEAR</text>
+          </g>
+          <g class="icop-ring" data-stage="1" aria-selected="true">
+            <path class="icop-arc" d="M 242 300 A 68 68 0 0 1 378 300" fill="none" stroke="#d9bd8a" stroke-width="40"/>
+            <text class="icop-label" x="310" y="243" text-anchor="middle">IDENTIFY</text>
+          </g>
+
+          <!-- baseline -->
+          <line x1="60" y1="300" x2="560" y2="300" stroke="#2e2c28" stroke-width="1"/>
+
+          <!-- radial axis -->
+          <line x1="310" y1="322" x2="546" y2="322" stroke="#4a453f" stroke-width="1"/>
+          <path d="M 540 318 L 548 322 L 540 326 Z" fill="#4a453f"/>
+          <text class="icop-axis" x="310" y="340" text-anchor="start">INNER</text>
+          <text class="icop-axis" x="548" y="340" text-anchor="end">OUTER</text>
+        </svg>
+
+        <div>
+          <div class="icop-detail" id="icop-detail" aria-live="polite"></div>
+          <div class="icop-tabs" id="icop-tabs"></div>
         </div>
       </div>
     </div>
@@ -1033,7 +1359,8 @@ figcaption{font-size:.78rem;letter-spacing:.05em;color:var(--muted);margin-top:.
   <section class="page-head">
     <div class="wrap">
       <div class="cue"><span>The platform</span></div>
-      <h1>Session and Mara.</h1>
+      <img class="wordmark wordmark-lead" style="height:clamp(34px,5vw,54px)" src="assets/session-wordmark-black.png" alt="Session">
+      <h1>The platform behind the method.</h1>
       <p class="lede">I built Session so the method could reach people on the days I am not in the room. Mara is the interactive performance coach inside it.</p>
       <div class="btns">
         <a class="btn" href="https://mara.thesessionlab.com" target="_blank" rel="noopener">Try Mara</a>
@@ -1070,6 +1397,7 @@ figcaption{font-size:.78rem;letter-spacing:.05em;color:var(--muted);margin-top:.
   <section>
     <div class="wrap">
       <div class="cue"><span>Session</span></div>
+      <img class="wordmark wordmark-lead" src="assets/session-wordmark-black.png" alt="Session">
       <h2 style="max-width:22ch">The company that carries the method.</h2>
       <div class="two" style="margin-top:2.5rem">
         <div>
@@ -1147,13 +1475,31 @@ figcaption{font-size:.78rem;letter-spacing:.05em;color:var(--muted);margin-top:.
     <div class="wrap">
       <div class="cue"><span>Background</span></div>
       <ul class="ledger">
-        <li><h4>Performance</h4><p>Screen and radio credits across the BBC, HBO, Netflix and Channel 4. BBC Audio Drama Award winner.</p></li>
-        <li><h4>Voice</h4><p>Voice artist and audio director. Clients including Google, Adidas, BMW and UEFA.</p></li>
+        <li><h4>Performance</h4><p>Screen and radio credits across the BBC, HBO, Netflix, Channel 4, ITV and Sky, including EastEnders. BBC Audio Drama Award winner.</p></li>
+        <li><h4>Voice</h4><p>Voice artist and audio director. Clients including Google, Adidas, Braun, HelloFresh and the UEFA Champions League.</p></li>
         <li><h4>Teaching</h4><p>Lecturer at LAMDA. Course design, assessment and coaching across multiple cohorts.</p></li>
         <li><h4>Clinical</h4><p>Clinical hypnotherapist and Master NLP Practitioner.</p></li>
         <li><h4>Coaching</h4><p>More than five hundred clients across performance, communication and resilience.</p></li>
-        <li><h4>Building</h4><p>Founder of SESSION and creator of Mara. Also runs Slowdance Productions, a corporate podcast and audio production company.</p></li>
+        <li><h4>Building</h4><p>Founder of Session and creator of Mara. Also runs Slowdance Productions, a corporate podcast and audio production company.</p></li>
       </ul>
+
+      <div class="logo-group">
+        <div class="logo-label">Selected credits and clients</div>
+        <div class="logo-row small">
+          <img src="assets/logos/bbc.png" alt="BBC" loading="lazy">
+          <img src="assets/logos/netflix.png" alt="Netflix" loading="lazy">
+          <img src="assets/logos/hbo.png" alt="HBO" loading="lazy">
+          <img src="assets/logos/channel4.png" alt="Channel 4" loading="lazy">
+          <img src="assets/logos/itv.png" alt="ITV" loading="lazy">
+          <img src="assets/logos/sky.png" alt="Sky" loading="lazy">
+          <img src="assets/logos/eastenders.png" alt="EastEnders" loading="lazy">
+          <img src="assets/logos/google.png" alt="Google" loading="lazy">
+          <img src="assets/logos/adidas.png" alt="Adidas" loading="lazy">
+          <img src="assets/logos/braun.png" alt="Braun" loading="lazy">
+          <img src="assets/logos/hellofresh.png" alt="HelloFresh" loading="lazy">
+          <img src="assets/logos/uefa.png" alt="UEFA Champions League" loading="lazy">
+        </div>
+      </div>
     </div>
   </section>
 </div>
@@ -1209,6 +1555,12 @@ figcaption{font-size:.78rem;letter-spacing:.05em;color:var(--muted);margin-top:.
 
 </main>
 
+<div class="sticky-cta" id="stickyCta">
+  <a class="btn" data-book>Book a free <span data-mins>20</span> minute call</a>
+  <div class="sub">No obligation · find out if I can help</div>
+</div>
+
+
 <footer>
   <div class="wrap">
     <div class="foot-grid">
@@ -1237,7 +1589,7 @@ figcaption{font-size:.78rem;letter-spacing:.05em;color:var(--muted);margin-top:.
         </ul>
       </div>
       <div>
-        <img src="https://www.thesessionlab.com/assets/Session_Logo_White_Transparent.png" alt="Session" style="width:104px;height:auto;opacity:.75;margin-bottom:1rem">
+        <img src="assets/session-wordmark-white.png" alt="Session" style="width:104px;height:auto;opacity:.75;margin-bottom:1rem">
         <h4>Session and Mara</h4>
         <ul>
           <li><a href="#/session" data-nav>How it fits together</a></li>
@@ -1269,6 +1621,35 @@ figcaption{font-size:.78rem;letter-spacing:.05em;color:var(--muted);margin-top:.
    ============================================================ */
 var BOOKING_URL = "https://calendly.com/jade-sessioncare/session-with-jade-discovery";
 var CALL_MINUTES = 20;
+
+/* ============================================================
+   PRICING · fill in your figures between the quotes.
+   Anything left empty shows "On application" instead.
+   Write them exactly as you want them read, e.g.
+     "From £250 per session"   "£1,500 for six sessions"
+   PRICE_SUB below carries the block totals. Update both together.
+   ============================================================ */
+/* ============================================================
+   MARA COMMERCIAL · paste the video link between the quotes.
+   Works with YouTube, Vimeo, or a direct .mp4 file.
+     YouTube: "https://www.youtube.com/watch?v=XXXXXXXXXXX"
+     Vimeo:   "https://vimeo.com/123456789"
+     File:    "https://.../mara-30.mp4"
+   Leave empty and the video block stays hidden.
+   ============================================================ */
+var VIDEO_URL = "";
+
+var PRICES = {
+  discovery:  "Free",
+  leadership: "From £250 per session",
+  speaking:   "From £250 per session",
+  mindset:    "From £250 per session",
+  confidence: "From £250 per session",
+  corporate:  ""
+};
+
+/* Sub-line shown under every price. Leave empty to hide it. */
+var PRICE_SUB = "Six session block from £1,500 · ten from £2,500 · payment plans available";
 
 (function(){
   var pages = ['home','coaching','speaking','corporate','icop','session','about','enquire'];
@@ -1325,6 +1706,23 @@ var CALL_MINUTES = 20;
     });
   });
 
+  // prices, written once into every card
+  var prices = (typeof PRICES === 'object' && PRICES) ? PRICES : {};
+  document.querySelectorAll('[data-price]').forEach(function(el){
+    var key = el.getAttribute('data-price');
+    var val = (prices[key] || '').trim();
+    var sub = (typeof PRICE_SUB === 'string' ? PRICE_SUB.trim() : '');
+    if(val){
+      el.innerHTML = '<b style="font-size:1.5rem">' + val + '</b>';
+      if(sub && key !== 'corporate' && key !== 'discovery'){
+        el.insertAdjacentHTML('afterend',
+          '<div class="price-sub">' + sub + '</div>');
+      }
+    }else{
+      el.innerHTML = '<b style="font-size:1.2rem">On application</b>';
+    }
+  });
+
   // call length, written once into every button and heading
   var mins = (typeof CALL_MINUTES === 'number' ? CALL_MINUTES : 20);
   var words = {20:'Twenty', 25:'Twenty five', 30:'Thirty', 45:'Forty five', 60:'Sixty'};
@@ -1377,11 +1775,87 @@ var CALL_MINUTES = 20;
     }
   }
 
+  // Mara commercial
+  var vurl = (typeof VIDEO_URL === 'string' ? VIDEO_URL.trim() : '');
+  var vslot = document.getElementById('mara-video');
+  if(vslot){
+    if(!vurl){
+      vslot.closest('[data-video-block]').style.display = 'none';
+    }else{
+      var embed = '';
+      var yt = vurl.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/embed\/)([\w-]{11})/);
+      var vm = vurl.match(/vimeo\.com\/(?:video\/)?(\d+)/);
+      if(yt){
+        embed = '<iframe src="https://www.youtube-nocookie.com/embed/' + yt[1] +
+                '?rel=0&modestbranding=1" title="Mara in 30 seconds" allowfullscreen ' +
+                'allow="accelerometer; encrypted-media; picture-in-picture" loading="lazy"></iframe>';
+      }else if(vm){
+        embed = '<iframe src="https://player.vimeo.com/video/' + vm[1] +
+                '?dnt=1&title=0&byline=0" title="Mara in 30 seconds" allowfullscreen ' +
+                'allow="fullscreen; picture-in-picture" loading="lazy"></iframe>';
+      }else{
+        embed = '<video controls preload="metadata" playsinline ' +
+                'poster="https://i.postimg.cc/XYv84Wwp/eo7a2474-23644779.jpg">' +
+                '<source src="' + vurl + '" type="video/mp4">Your browser cannot play this video.</video>';
+      }
+      vslot.innerHTML = embed;
+    }
+  }
+
+  // ICOP diagram
+  var icop = [
+    {n:'I', title:'Identify',
+     body:'Find the actual pattern, not the story about it. What happens, when, in which rooms, and what it is costing you. Most people have been solving the wrong problem for years.'},
+    {n:'C', title:'Clear',
+     body:'Interrupt what is producing it. Clinical hypnotherapy and NLP applied precisely, so the pattern stops running underneath everything else you do.'},
+    {n:'O', title:'Own',
+     body:'Build practical tools to change your state on purpose. Breath, body, voice, attention and mind, trained as a system you can enter deliberately rather than hope for.'},
+    {n:'P', title:'Perform',
+     body:'Practise it in the situations that actually matter. Repetition under real pressure until it holds in the rooms that count, not only in the safe ones.'}
+  ];
+  var detail = document.getElementById('icop-detail');
+  var tabs = document.getElementById('icop-tabs');
+  if(detail && tabs){
+    var rings = document.querySelectorAll('.icop-ring');
+    function showStage(i){
+      var d = icop[i];
+      detail.innerHTML = '<div class="stage">' + d.n + ' · stage ' + (i+1) + ' of 4</div>' +
+                         '<h3>' + d.title + '</h3><p>' + d.body + '</p>';
+      rings.forEach(function(r){
+        r.setAttribute('aria-selected', String(Number(r.getAttribute('data-stage')) === i+1));
+      });
+      tabs.querySelectorAll('button').forEach(function(b, bi){
+        b.setAttribute('aria-pressed', String(bi === i));
+      });
+    }
+    icop.forEach(function(d, i){
+      var b = document.createElement('button');
+      b.type = 'button';
+      b.textContent = d.title;
+      b.addEventListener('click', function(){ showStage(i); });
+      tabs.appendChild(b);
+    });
+    rings.forEach(function(r){
+      var i = Number(r.getAttribute('data-stage')) - 1;
+      r.addEventListener('click', function(){ showStage(i); });
+    });
+    showStage(0);
+  }
+
   var send = document.getElementById('send');
   if(send){
     send.addEventListener('click', function(){
       document.getElementById('formnote').textContent = 'Prototype only. Nothing was sent. Connect a form handler before launch.';
     });
+  }
+
+  // sticky CTA hides once the footer is in view
+  var sticky = document.getElementById('stickyCta');
+  var foot = document.querySelector('footer');
+  if(sticky && foot && 'IntersectionObserver' in window){
+    new IntersectionObserver(function(entries){
+      sticky.classList.toggle('hide', entries[0].isIntersecting);
+    }, {rootMargin:'0px 0px -20% 0px'}).observe(foot);
   }
 
   document.getElementById('yr').textContent = new Date().getFullYear();
