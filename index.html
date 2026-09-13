@@ -96,6 +96,32 @@ header.on-dark{background:rgba(10,10,10,.92);border-bottom-color:var(--rule-dark
 .shot figcaption{font-family:var(--sans);font-size:.8rem;letter-spacing:.04em;color:var(--muted);margin-top:.7rem}
 .dark .shot figcaption{color:var(--muted-dark)}
 .product .outline{font-size:.92rem;color:var(--muted);margin:.9rem 0 0}
+.icop-stages{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;margin-top:2.6rem;border-top:1px solid var(--rule)}
+.icop-stage{padding:1.6rem 1.4rem 0 0;border-right:1px solid var(--rule);position:relative}
+.icop-stage:last-child{border-right:0;padding-right:0}
+.icop-stage::before{content:"";position:absolute;top:-1px;left:0;right:1px;height:2px;background:var(--gold);transform:scaleX(.28);transform-origin:left}
+.icop-stage:nth-child(2)::before{transform:scaleX(.52)}
+.icop-stage:nth-child(3)::before{transform:scaleX(.76)}
+.icop-stage:nth-child(4)::before{transform:scaleX(1)}
+.icop-stage-no{font-family:var(--serif);font-size:1.9rem;color:var(--gold);line-height:1;margin-bottom:.5rem}
+.icop-stage h4{font-family:var(--serif);font-weight:400;font-size:1.3rem;margin-bottom:.4rem}
+.icop-stage p{font-size:.9rem;color:var(--muted);margin:0}
+@media (max-width:860px){.icop-stages{grid-template-columns:repeat(2,minmax(0,1fr))}.icop-stage{border-right:0;padding-right:1.2rem;padding-bottom:1.4rem}}
+@media (max-width:480px){.icop-stages{grid-template-columns:minmax(0,1fr)}}
+
+.arc{margin-top:3rem;position:relative}
+.arc-track{position:absolute;left:0;right:0;top:6px;height:1px;background:linear-gradient(90deg,var(--gold),rgba(184,150,90,.18))}
+.arc-row{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1.6rem;position:relative}
+.arc-dot{display:block;width:13px;height:13px;border:1px solid var(--gold);border-radius:50%;background:var(--paper);position:relative;z-index:2}
+.arc-dot.fill{background:var(--gold)}
+.arc-when{font-family:var(--sans);font-size:.76rem;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);margin:1rem 0 .35rem}
+.arc-cell h4{font-family:var(--serif);font-weight:400;font-size:1.25rem;margin-bottom:.35rem}
+.arc-cell p{font-size:.9rem;color:var(--muted);margin:0}
+@media (max-width:860px){.arc-row{grid-template-columns:repeat(2,minmax(0,1fr));gap:2rem 1.4rem}.arc-track{display:none}}
+@media (max-width:480px){.arc-row{grid-template-columns:minmax(0,1fr)}}
+.venn-mini{margin-top:2rem;max-width:340px}
+.venn-mini svg{width:100%;height:auto;display:block}
+@media (max-width:860px){.venn-mini{margin-inline:auto}}
 .legal-mark{display:inline-flex;align-items:center;gap:.55rem}
 .legal-mark img{height:25px;width:25px;display:block;opacity:.9}
 nav{display:flex;gap:1.6rem;align-items:center}
@@ -606,11 +632,26 @@ figcaption{font-size:.78rem;letter-spacing:.05em;color:var(--muted);margin-top:.
       <div class="cue"><span>The approach</span></div>
       <div class="two lean" style="align-items:start">
         <div>
-          <h2 style="max-width:14ch">I work on both halves.</h2>
+          <h2 style="max-width:14ch">I work from the inside, out.</h2>
+          <div class="venn-mini">
+            <svg viewBox="0 0 440 400" role="img" aria-label="Performance, communication and psychology overlapping, with the ICOP Method at the centre" xmlns="http://www.w3.org/2000/svg">
+              <g fill="#b8965a" fill-opacity="0.07" stroke="#b8965a" stroke-opacity="0.7" stroke-width="1.2">
+                <circle cx="220" cy="130" r="92"/>
+                <circle cx="166" cy="222" r="92"/>
+                <circle cx="274" cy="222" r="92"/>
+              </g>
+              <g text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-size="22" fill="#6d675e">
+                <text x="220" y="26">Performance</text>
+                <text x="140" y="350">Communication</text>
+                <text x="300" y="350">Psychology</text>
+              </g>
+              <text x="220" y="198" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-size="24" fill="#b8965a" letter-spacing="2">ICOP</text>
+            </svg>
+          </div>
         </div>
         <div>
           <p class="lede">The craft of performing, and the psychology of why you cannot always reach it.</p>
-          <p style="margin-top:1.2rem">Twenty years as a professional actress across television, film, radio and video games taught me the outside half. Voice, body, camera, timing, preparation and the rehearsal that makes something land on the one day it has to. It is a trade, it has tools, and the tools transfer directly into a board meeting, a keynote, an investor room or a lens on a tripod in your kitchen.</p>
+          <p style="margin-top:1.2rem">Twenty years as a professional actress across television, film, radio and video games taught me the outside half. Voice, body, camera, timing, preparation and the rehearsal that makes something land on the one day it has to. It is a trade, it has tools, and the tools can be trained so you connect with an audience, perform as yourself, manage stress and anxiety, and build and hold relationships.</p>
           <p>Then there is the other half, which is why a person who knows exactly what to do still cannot do it when the pressure arrives. That is where the clinical and psychological work comes in, and it is the reason I trained in it rather than staying on the performance side alone.</p>
         </div>
       </div>
@@ -676,8 +717,7 @@ figcaption{font-size:.78rem;letter-spacing:.05em;color:var(--muted);margin-top:.
         <h2>You already have the capability.</h2>
       </div>
       <div>
-        <p class="lede">The problem is reaching it consistently when the stakes are high.</p>
-        <p>Most people who come to me are already good. They know their material. They have the seniority, the track record and the intelligence. And then the board walks in, the camera goes live, the difficult conversation starts, and something in them changes shape.</p>
+        <p class="lede">Talent does not transfer in the room when your nervous system shuts down.</p>
         <p>Knowing what to say is not the same as being able to say it. That gap is not a knowledge problem or a confidence slogan problem. It is a performance problem, and performance is trainable.</p>
         <p>It also does not stay at work. The pattern that makes you go quiet in a board meeting is usually the same one running in the conversation you keep putting off at home. People arrive here for the presentation and stay for that.</p>
       </div>
@@ -692,13 +732,8 @@ figcaption{font-size:.78rem;letter-spacing:.05em;color:var(--muted);margin-top:.
         <li><h4>Executive communication</h4><p>Saying the difficult thing clearly, to the people who need to hear it.</p></li>
         <li><h4>Public speaking and presence</h4><p>Keynotes, panels, all hands, investor rooms and camera work.</p></li>
         <li><h4>Confidence under pressure</h4><p>Access to your own ability when the temperature rises.</p></li>
-        <li><h4>Emotional resilience</h4><p>Recovering fast, holding your ground, staying usable after a hard week.</p></li>
-        <li><h4>Performance psychology</h4><p>The patterns underneath the behaviour, and how to interrupt them.</p></li>
         <li><h4>High stakes conversations</h4><p>Negotiation, conflict, bad news, pushing back on someone senior.</p></li>
         <li><h4>Relationships and connection</h4><p>How you land with the people who matter. Colleagues, clients, partners, family.</p></li>
-        <li><h4>Breathwork</h4><p>The regulator underneath everything else. What decides whether the rest of you is available in the moment.</p></li>
-        <li><h4>Visualisation</h4><p>Rehearsing the room before you are in it, so the real thing is a repeat rather than a first attempt.</p></li>
-        <li><h4>Nervous system regulation</h4><p>Practical work with breath, body and voice, before and during the moment.</p></li>
         <li><h4>Leadership presence</h4><p>How other people experience you, and what to change to shift that.</p></li>
       </ul>
     </div>
@@ -785,7 +820,7 @@ figcaption{font-size:.78rem;letter-spacing:.05em;color:var(--muted);margin-top:.
     <div class="wrap two">
       <div>
         <div class="cue"><span>The methodology</span></div>
-        <blockquote class="quote" style="margin:0">I spent eighteen years learning how to perform under pressure. I now use those principles to help leaders do the same.</blockquote>
+        <blockquote class="quote" style="margin:0">I spent twenty years learning how to perform under pressure. I now use those principles to help leaders do the same.</blockquote>
         <div class="attrib">Jade Matthew · creator of the ICOP Method</div>
       </div>
       <div>
@@ -848,34 +883,8 @@ figcaption{font-size:.78rem;letter-spacing:.05em;color:var(--muted);margin-top:.
   <section class="dark hair">
     <div class="wrap">
       <div class="cue"><span>Where the work comes from</span></div>
-      <h2 style="max-width:22ch">Eighteen years performing under real pressure.</h2>
-      <p style="margin-top:1.2rem;max-width:58ch">I did not learn this from a coaching qualification. I learned it on set, on air and in the booth, where the take has to land and there is nowhere to hide.</p>
-
-      <div class="logo-group">
-        <div class="logo-label">Screen, television and radio credits</div>
-        <div class="logo-row">
-            <img src="assets/logos/bbc.png" alt="BBC" loading="lazy">
-            <img src="assets/logos/netflix.png" alt="Netflix" loading="lazy">
-            <img src="assets/logos/hbo.png" alt="HBO" loading="lazy">
-            <img src="assets/logos/channel4.png" alt="Channel 4" loading="lazy">
-            <img src="assets/logos/itv.png" alt="ITV" loading="lazy">
-            <img src="assets/logos/sky.png" alt="Sky" loading="lazy">
-            <img src="assets/logos/eastenders.png" alt="EastEnders" loading="lazy">
-        </div>
-      </div>
-
-      <div class="logo-group">
-        <div class="logo-label">Voice and audio direction clients</div>
-        <div class="logo-row small">
-            <img src="assets/logos/google.png" alt="Google" loading="lazy">
-            <img src="assets/logos/adidas.png" alt="Adidas" loading="lazy">
-            <img src="assets/logos/braun.png" alt="Braun" loading="lazy">
-            <img src="assets/logos/hellofresh.png" alt="HelloFresh" loading="lazy">
-            <img src="assets/logos/uefa.png" alt="UEFA Champions League" loading="lazy">
-        </div>
-      </div>
-
-      <p class="note" style="color:var(--muted-dark);margin-top:2.5rem;max-width:60ch">Logos indicate productions and clients I have worked on as a performer, voice artist and audio director. They do not imply endorsement of my coaching.</p>
+      <h2 style="max-width:22ch">Twenty years performing under real pressure.</h2>
+      <p style="margin-top:1.2rem;max-width:58ch">I did not learn this from a coaching qualification. I learned it on set, on air and in the booth, where the take has to land and there is nowhere to hide. Screen and radio credits across the BBC, HBO, Netflix, Channel 4, ITV and Sky, and voice work for Google, Adidas and the UEFA Champions League.</p>
     </div>
   </section>
 
@@ -886,30 +895,18 @@ figcaption{font-size:.78rem;letter-spacing:.05em;color:var(--muted);margin-top:.
         <h2>Jade Matthew.</h2>
         <div class="stat-row" style="margin-top:1.8rem">
           <div class="stat"><b>500+</b><span>senior leaders coached</span></div>
-          <div class="stat"><b>18</b><span>years in practice</span></div>
+          <div class="stat"><b>20</b><span>years in practice</span></div>
           <div class="stat"><b>ICOP</b><span>method creator</span></div>
         </div>
       </div>
       <div>
         <p>Performance psychology, communication and presence. Award winning actress. Clinical hypnotherapist and Master NLP Practitioner. Lecturer at LAMDA. Creator of the ICOP Method.</p>
-        <p>Eighteen years performing professionally under real pressure, and eighteen years working out why capable people lose access to themselves at exactly the wrong moment. The coaching sits where those two things meet.</p>
+        <p>Twenty years performing professionally under real pressure, and the same twenty working out why capable people lose access to themselves at exactly the wrong moment. The coaching sits where those two things meet.</p>
       </div>
     </div>
   </section>
 
-    <section class="dark">
-    <div class="wrap">
-      <div class="cue"><span>The wider system</span></div>
-      <h2>One methodology, four ways to reach it.</h2>
-      <div class="eco">
-        <div class="eco-row"><div class="name">Jade Matthew</div><p>The person, the authority and the practitioner.</p></div>
-        <div class="eco-row"><div class="name">The ICOP Method</div><p>The intellectual property. Eighteen years of performance, psychology and communication work in one framework.</p></div>
-        <div class="eco-row"><div class="name">Coaching and speaking</div><p>The human work. Private programmes, keynotes and corporate delivery.</p></div>
-        <div class="eco-row"><div class="name"><img class="wordmark-inline" style="height:.8em" src="assets/session-wordmark-white.png" alt="Session"></div><p>The platform that carries the method beyond the room.</p></div>
-        <div class="eco-row"><div class="name">Mara</div><p>The interactive coach inside Session, where people practise between sessions.</p></div>
-      </div>
-    </div>
-  </section>
+    
 
   <section class="dark hair">
     <div class="wrap">
@@ -1160,16 +1157,35 @@ figcaption{font-size:.78rem;letter-spacing:.05em;color:var(--muted);margin-top:.
   </section>
 
   <section class="tint">
-    <div class="wrap two lean">
-      <div>
-        <div class="cue"><span>How we work</span></div>
-        <h2>Four stages. The ICOP Method.</h2>
+    <div class="wrap">
+      <div class="cue"><span>How we work</span></div>
+      <h2>Four stages. The ICOP Method.</h2>
+
+      <div class="icop-stages">
+        <div class="icop-stage">
+          <div class="icop-stage-no">01</div>
+          <h4>Identify</h4>
+          <p>What is actually happening, in the body and in the behaviour, rather than what you assume is happening.</p>
+        </div>
+        <div class="icop-stage">
+          <div class="icop-stage-no">02</div>
+          <h4>Clear</h4>
+          <p>The patterns, beliefs and responses getting in the way. This is where the clinical work earns its place.</p>
+        </div>
+        <div class="icop-stage">
+          <div class="icop-stage-no">03</div>
+          <h4>Own</h4>
+          <p>Tools you can reach for deliberately. Breath, attention, voice and state, used on purpose rather than by luck.</p>
+        </div>
+        <div class="icop-stage">
+          <div class="icop-stage-no">04</div>
+          <h4>Perform</h4>
+          <p>We rehearse the real room, under pressure, until it holds when it is no longer a rehearsal.</p>
+        </div>
       </div>
-      <div>
-        <p>Identify what is actually happening. Clear the patterns getting in your way. Own a set of tools you can use deliberately. Perform, by rehearsing the real situation until it holds.</p>
-        <p>The aim is not insight for its own sake. The aim is change you can feel and act on in the real world, when it counts.</p>
-        <div class="btns"><a class="btn ghost" href="#/icop" data-nav>The method in full</a></div>
-      </div>
+
+      <p style="margin-top:2.4rem;max-width:56ch">The aim is not insight for its own sake. The aim is change you can feel and act on in the real world, when it counts.</p>
+      <div class="btns"><a class="btn ghost" href="#/icop" data-nav>The method in full</a></div>
     </div>
   </section>
 
@@ -1190,6 +1206,16 @@ figcaption{font-size:.78rem;letter-spacing:.05em;color:var(--muted);margin-top:.
             <li>Payment plans available on every block</li>
             <li>Session and Mara included throughout</li>
           </ul>
+        </div>
+      </div>
+
+      <div class="arc">
+        <div class="arc-track"></div>
+        <div class="arc-row">
+          <div class="arc-cell"><span class="arc-dot fill"></span><div class="arc-when">Session 1</div><h4>The map</h4><p>Where your performance actually breaks down. You leave with that whether or not you continue.</p></div>
+          <div class="arc-cell"><span class="arc-dot fill"></span><div class="arc-when">Sessions 2 to 4</div><h4>The pattern</h4><p>The thing underneath the behaviour, and the work to shift it.</p></div>
+          <div class="arc-cell"><span class="arc-dot fill"></span><div class="arc-when">Sessions 5 to 8</div><h4>The tools</h4><p>Voice, breath, attention and state, practised until you can reach them under load.</p></div>
+          <div class="arc-cell"><span class="arc-dot"></span><div class="arc-when">The real moment</div><h4>The room</h4><p>The meeting, pitch or conversation itself. Rehearsed first, then lived.</p></div>
         </div>
       </div>
 
@@ -1314,7 +1340,7 @@ figcaption{font-size:.78rem;letter-spacing:.05em;color:var(--muted);margin-top:.
         <h2>I do not talk about performing under pressure. I do it for a living.</h2>
       </div>
       <div>
-        <p>I am a working actor and voice artist with eighteen years of credits across the BBC, HBO, Netflix and Channel 4, and a BBC Audio Drama Award. I lecture at LAMDA. I have coached more than five hundred senior leaders, including individuals from Deutsche Bank, Vodafone, Hilton, Netflix, Channel 4 and Sky.</p>
+        <p>I am a working actor and voice artist with twenty years of credits across the BBC, HBO, Netflix and Channel 4, and a BBC Audio Drama Award. I lecture at LAMDA. I have coached more than five hundred senior leaders, including individuals from Deutsche Bank, Vodafone, Hilton, Netflix, Channel 4 and Sky.</p>
         <p>Which means the demonstration is live. I can show an audience the difference between a person speaking and a person landing, in real time, using someone from the room.</p>
         <div class="logo-row small" style="margin-top:1.8rem">
           <img src="assets/logos/bbc.png" alt="BBC" loading="lazy">
@@ -1369,7 +1395,7 @@ figcaption{font-size:.78rem;letter-spacing:.05em;color:var(--muted);margin-top:.
           <img src="assets/logos/bbc.png" alt="BBC" loading="lazy">
         </div>
       </div>
-      <div class="btns"><a class="btn" href="#/enquire" data-nav>Talk to Jade about your organisation</a></div>
+      <div class="btns"><a class="btn" href="#/enquire" data-nav>Request a scoping call</a></div>
     </div>
   </section>
 
@@ -1411,7 +1437,6 @@ figcaption{font-size:.78rem;letter-spacing:.05em;color:var(--muted);margin-top:.
         <div>
           <h3>What a programme looks like inside an organisation</h3>
           <p style="margin-top:.9rem">How the workshops and programmes are structured, what changes for the people in them, and how progress is made visible across a cohort rather than assumed.</p>
-          <div class="btns"><a class="btn ghost" data-book>Request a scoping call</a></div>
         </div>
       </div>
       <div style="margin-top:2rem">
@@ -1455,7 +1480,6 @@ figcaption{font-size:.78rem;letter-spacing:.05em;color:var(--muted);margin-top:.
             </div>
 
             <div class="btns" style="margin-top:1.4rem">
-              <a class="btn ghost" href="https://mara.thesessionlab.com/brochure" target="_blank" rel="noopener">Open the Mara brochure</a>
               <a class="btn ghost" href="https://mara.thesessionlab.com" target="_blank" rel="noopener">See Mara</a>
             </div>
           </div>
@@ -1482,7 +1506,6 @@ figcaption{font-size:.78rem;letter-spacing:.05em;color:var(--muted);margin-top:.
         <p>The ICOP Method, the rooms with live demonstrations, the curricula, the six scored dimensions, and how Mara compares to everything else on the market. Read it in the browser or download the PDF to circulate internally.</p>
         <div class="btns"><a class="btn" href="https://mara.thesessionlab.com/brochure" target="_blank" rel="noopener">Open the brochure</a></div>
       </div>
-      <div class="btns"><a class="btn" href="#/enquire" data-nav>Request a scoping call</a></div>
     </div>
   </section>
 </div>
@@ -1691,7 +1714,7 @@ figcaption{font-size:.78rem;letter-spacing:.05em;color:var(--muted);margin-top:.
       <div>
         <p>I sign whatever you need me to sign, before we start, including production side and party side agreements where a studio, broadcaster or office requires it. I do not name clients, I do not confirm or deny who I work with, and I do not use this work as content in any form, which includes the anonymised version.</p>
         <p>Where we record rehearsal, and we usually do because playback is most of the value, the footage belongs to the client. It is deleted on request, it is never retained as an example, and where Session and Mara are used the account sits with the client rather than with the agency, so nothing about unreleased work or unannounced positions passes through anybody else's hands.</p>
-        <p>I have spent eighteen years on the other side of this. I know what it costs somebody when a preparation session turns into an anecdote at a dinner party, and I have no interest in being the person who does that.</p>
+        <p>I have spent twenty years on the other side of this. I know what it costs somebody when a preparation session turns into an anecdote at a dinner party, and I have no interest in being the person who does that.</p>
       </div>
     </div>
   </section>
@@ -1727,7 +1750,7 @@ figcaption{font-size:.78rem;letter-spacing:.05em;color:var(--muted);margin-top:.
     <div class="wrap">
       <div class="cue"><span>The methodology</span></div>
       <h1>The ICOP Method</h1>
-      <p class="lede">A framework for performance under pressure, developed across eighteen years of professional performance, clinical practice and coaching more than five hundred people.</p>
+      <p class="lede">A framework for performance under pressure, developed across twenty years of professional performance, clinical practice and coaching more than five hundred people.</p>
     </div>
   </section>
 
@@ -1808,7 +1831,7 @@ figcaption{font-size:.78rem;letter-spacing:.05em;color:var(--muted);margin-top:.
         <li><h4>Visualisation</h4><p>Rehearsing the room in detail before you walk into it. Standard practice for performers and athletes, rare in business, and it changes what your body expects.</p></li>
         <li><h4>Clinical hypnotherapy</h4><p>For the pattern that keeps running underneath the effort. Precise work on what is producing the behaviour rather than managing it.</p></li>
         <li><h4>NLP</h4><p>Language, meaning and the internal narrative. How you talk to yourself while you are speaking to everyone else.</p></li>
-        <li><h4>Voice and body work</h4><p>Eighteen years of professional performance training. Pace, range, resonance, grounding and stillness, trained as an instrument.</p></li>
+        <li><h4>Voice and body work</h4><p>Twenty years of professional performance training. Pace, range, resonance, grounding and stillness, trained as an instrument.</p></li>
         <li><h4>Rehearsal under pressure</h4><p>Deliberate practice in conditions that resemble the real room, in person with me or on camera with Mara.</p></li>
       </ul>
     </div>
@@ -1939,9 +1962,9 @@ figcaption{font-size:.78rem;letter-spacing:.05em;color:var(--muted);margin-top:.
         </figure>
       </div>
       <div>
-        <p>I trained as an actor and worked professionally in television, film, radio and voice for eighteen years, across the BBC, HBO, Netflix and Channel 4. Performance under pressure was not a topic I studied. It was the job.</p>
+        <p>I trained as an actor and worked professionally in television, film, radio and voice for twenty years, across the BBC, HBO, Netflix and Channel 4. Performance under pressure was not a topic I studied. It was the job.</p>
         <p>Alongside that I qualified as a clinical hypnotherapist and Master NLP Practitioner, because the interesting question was never how to stand or where to look. It was why capable people lose access to themselves at exactly the wrong moment.</p>
-        <p>Those two threads became the ICOP Method. Over the last eighteen years I have used it with more than five hundred people, from actors and students at LAMDA to founders, executives and leaders who have to walk into rooms that decide things.</p>
+        <p>Those two threads became the ICOP Method. Over the last twenty years I have used it with more than five hundred people, from actors and students at LAMDA to founders, executives and leaders who have to walk into rooms that decide things.</p>
         <p>Session is the most recent part of it. I built the platform myself so the method could reach people between sessions, and so the practice could keep happening on the days I am not there.</p>
       </div>
     </div>
