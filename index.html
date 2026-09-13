@@ -607,7 +607,7 @@ figcaption{font-size:.78rem;letter-spacing:.05em;color:var(--muted);margin-top:.
       </div>
 
       <figure class="hero-portrait reveal">
-        <img src="assets/jade-portrait.jpg" alt="Jade Matthew" fetchpriority="high">
+        <img src="assets/jade-portrait.jpg" srcset="assets/jade-portrait-600.jpg 600w, assets/jade-portrait.jpg 1000w" sizes="(max-width:860px) 100vw, 500px" alt="Jade Matthew" fetchpriority="high" width="1000" height="1250">
       </figure>
     </div>
   </section>
@@ -1957,7 +1957,7 @@ figcaption{font-size:.78rem;letter-spacing:.05em;color:var(--muted);margin-top:.
     <div class="wrap two lean">
       <div>
         <figure class="portrait" style="margin:0">
-          <img src="assets/jade-portrait.jpg" alt="Jade Matthew" loading="lazy">
+          <img src="assets/jade-portrait.jpg" srcset="assets/jade-portrait-600.jpg 600w, assets/jade-portrait.jpg 1000w" sizes="(max-width:860px) 100vw, 460px" alt="Jade Matthew" loading="lazy" width="1000" height="1250">
           <figcaption>Jade Matthew · London</figcaption>
         </figure>
       </div>
@@ -2449,7 +2449,7 @@ var PRICE_SUB = "";
                 'allow="fullscreen; picture-in-picture" loading="lazy"></iframe>';
       }else{
         embed = '<video controls preload="metadata" playsinline ' +
-                'poster="assets/jade-portrait.jpg">' +
+                'poster="assets/jade-portrait-wide.jpg">' +
                 '<source src="' + vurl + '" type="video/mp4">Your browser cannot play this video.</video>';
       }
       vslot.innerHTML = embed;
