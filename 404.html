@@ -649,6 +649,29 @@ h2 em,h3 em,.orig h3 em{color:var(--rust);font-weight:800}
 .faq details[open] summary::after{content:"\2212"}
 .faq details p{margin-top:12px;font-size:15.5px;line-height:1.65;color:#2A2826;max-width:720px}
 
+/* v5.1 new photos and films */
+.pp-1{left:0;top:4%;width:42%;height:66%;z-index:2}
+.pp-2{right:0;top:0;width:55%;height:40%;z-index:1}
+.pp-3{right:0;top:43%;width:46%;height:30%;z-index:1}
+.pp-4{left:16%;bottom:0;width:56%;height:34%;z-index:3;border:8px solid var(--paper)}
+.pbrand-pics:hover .pp-4{transform:translateY(8px)}
+.pbrand-pics:hover .pp-3{transform:translate(8px,4px)}
+.pp-tag{bottom:auto;top:36%;right:-6px}
+.shots video{width:100%;height:100%;object-fit:cover;display:block}
+.stmt{background-image:none;background-color:#0E0E0F;isolation:isolate}
+.stmt-film{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-1;object-position:70% center}
+.stmt::before{z-index:0;background:linear-gradient(90deg,rgba(14,14,15,.92),rgba(14,14,15,.35))}
+.stmt .wrap{z-index:1}
+@media (prefers-reduced-motion:reduce){.stmt-film,.shots video{display:none}}
+.pp-1{left:0;top:6%;width:40%;height:60%;z-index:2}
+.pp-2{right:0;top:0;width:57%;height:37%;z-index:1}
+.pp-3{right:0;top:40%;width:57%;height:30%;z-index:2}
+.pp-4{left:10%;bottom:0;width:58%;height:30%;z-index:3}
+.pp-tag{top:auto;bottom:8%;right:-6px}
+.pp-tag{top:36%;bottom:auto;right:-6px;z-index:4}
+.cvph{filter:grayscale(1) contrast(1.06)}
+.cvsub{font-size:15px;line-height:1.5;color:#2A2826;margin-top:10px;max-width:460px}
+
 </style>
 <script type="application/ld+json">
 {
@@ -919,7 +942,7 @@ h2 em,h3 em,.orig h3 em{color:var(--rust);font-weight:800}
     <div class="cvph" role="img" aria-label="Jade Matthew"></div>
   </div>
   <div class="cvrow wrapw">
-    <div><p class="tiny">For people who get looked at for a living</p><p class="cvline">Actors, musicians, public figures, influencers and the people who represent them.</p></div>
+    <div><p class="tiny">For people who get looked at for a living</p><p class="cvline">Public figures, musicians, entrepreneurs and influencers.</p><p class="cvsub">I work with them, and with their PR, comms and marketing teams.</p></div>
     <div class="btns"><a class="btn" data-book>Book a <span data-mins>20</span> minute call</a><a class="btn line" href="#teams">For managers and PRs</a></div>
   </div>
 </section>
@@ -1082,6 +1105,7 @@ h2 em,h3 em,.orig h3 em{color:var(--rust);font-weight:800}
 </section>
 
 <section class="stmt" aria-label="Rehearse the interview before it happens">
+  <video class="stmt-film" autoplay muted loop playsinline preload="metadata" poster="assets/content/vid-breath.jpg" aria-hidden="true"><source src="assets/content/vid-breath.mp4" type="video/mp4"></video>
   <div class="wrap"><p>Rehearse the interview <span>before it happens.</span></p><small>Session with Jade · performance under pressure</small></div>
 </section>
 
@@ -1106,7 +1130,7 @@ h2 em,h3 em,.orig h3 em{color:var(--rust);font-weight:800}
     </ol>
     <div class="shots">
       <figure><img src="assets/content/pb-press2.jpg" alt="A woman in sunglasses and a leather coat drinking coffee outside, ready for a press day" loading="lazy"><figcaption>The press line</figcaption></figure>
-      <figure><img src="assets/content/pb-studio.jpg" alt="A performer sitting on a vintage television in a photo studio" loading="lazy"><figcaption>The studio day</figcaption></figure>
+      <figure><video autoplay muted loop playsinline preload="metadata" poster="assets/content/vid-shoot.jpg" aria-label="Hair, make up and styling on a photo shoot"><source src="assets/content/vid-shoot.mp4" type="video/mp4"></video><figcaption>The shoot day</figcaption></figure>
       <figure><img src="assets/content/pb-podcast.jpg" alt="A woman speaking into a podcast microphone at home" loading="lazy"><figcaption>The podcast</figcaption></figure>
     </div>
   </div>
@@ -1131,9 +1155,10 @@ h2 em,h3 em,.orig h3 em{color:var(--rust);font-weight:800}
       <div class="btns" style="margin-top:28px"><a class="btn" data-book>Book a <span data-mins>20</span> minute call</a></div>
     </div>
     <div class="pbrand-pics" aria-hidden="true">
-      <img class="pp-1" src="assets/content/pb-selfie.jpg" alt="">
-      <img class="pp-2" src="assets/content/pb-tripod.jpg" alt="">
-      <img class="pp-3" src="assets/content/pb-talk.jpg" alt="">
+      <img class="pp-1" src="assets/content/pb-neon.jpg" alt="">
+      <img class="pp-2" src="assets/content/pb-tvduo.jpg" alt="">
+      <img class="pp-3" src="assets/content/pb-boxer.jpg" alt="">
+      <img class="pp-4" src="assets/content/pb-huddle.jpg" alt="">
       <span class="pp-tag">On camera · live · in the press</span>
     </div>
   </div>
