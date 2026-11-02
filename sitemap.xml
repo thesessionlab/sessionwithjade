@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://sessionwithjade.com/</loc><lastmod>2026-09-26</lastmod><priority>1.0</priority></url>
-  <url><loc>https://sessionwithjade.com/articles/why-capable-people-freeze-under-pressure.html</loc><lastmod>2026-09-02</lastmod><priority>0.6</priority></url>
+  <url><loc>https://sessionwithjade.com/</loc><lastmod>2026-11-02</lastmod><priority>1.0</priority></url>
+  <url><loc>https://sessionwithjade.com/mental-health/</loc><lastmod>2026-11-02</lastmod><priority>0.9</priority></url>
+  <url><loc>https://sessionwithjade.com/creatives/</loc><lastmod>2026-11-02</lastmod><priority>0.9</priority></url>
+  <url><loc>https://sessionwithjade.com/corporate/</loc><lastmod>2026-11-02</lastmod><priority>0.8</priority></url>
+  <url><loc>https://sessionwithjade.com/media/</loc><lastmod>2026-11-02</lastmod><priority>0.8</priority></url>
+  <url><loc>https://sessionwithjade.com/speaking/</loc><lastmod>2026-11-02</lastmod><priority>0.7</priority></url>
+  <url><loc>https://sessionwithjade.com/apps/</loc><lastmod>2026-11-02</lastmod><priority>0.7</priority></url>
+  <url><loc>https://sessionwithjade.com/articles/why-capable-people-freeze-under-pressure.html</loc><lastmod>2026-09-02</lastmod><priority>0.5</priority></url>
 </urlset>

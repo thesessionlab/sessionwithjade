@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Session app and Mara · Session with Jade Matthew</title>
+<meta name="description" content="Session is Jade Matthew&#x27;s app for the days between sessions: hypnosis recordings, programmes and Neuro sessions. Mara helps teams rehearse on camera.">
+<link rel="canonical" href="https://sessionwithjade.com/apps/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Session with Jade Matthew">
+<meta property="og:title" content="The Session app and Mara · Session with Jade Matthew">
+<meta property="og:description" content="Session is Jade Matthew&#x27;s app for the days between sessions: hypnosis recordings, programmes and Neuro sessions. Mara helps teams rehearse on camera.">
+<meta property="og:url" content="https://sessionwithjade.com/apps/">
+<meta property="og:image" content="https://sessionwithjade.com/assets/img-jade-wide.jpg">
+<meta property="og:locale" content="en_GB">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#E7E4DF">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700;800&amp;family=Archivo:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#E7E4DF}
+a{color:#141414}a:hover{color:#BD4718}
+.btn{transition:background .15s}
+.btn:hover{background:#A63C12 !important;color:#FFFFFF !important}
+.btn-light:hover{background:#F4F1EB !important;color:#141414 !important}
+.navlink{text-decoration:none}
+.navlink:hover{color:#BD4718 !important}
+.pick input{accent-color:#BD4718}
+@keyframes sw-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+@keyframes sw-breathe{0%,100%{transform:scale(.55)}45%{transform:scale(1)}}
+@keyframes sw-play{0%{width:8%}100%{width:92%}}
+@keyframes sw-dot{0%,100%{opacity:.25}50%{opacity:1}}
+@keyframes sw-rec{0%,100%{opacity:1}50%{opacity:.2}}
+@keyframes sw-m1{0%,100%{width:62%}50%{width:78%}}
+@keyframes sw-m2{0%,100%{width:48%}50%{width:70%}}
+.sw-float{animation:sw-float 6s ease-in-out infinite}
+.sw-breathe{animation:sw-breathe 8s ease-in-out infinite}
+.sw-play{animation:sw-play 14s linear infinite}
+.sw-dot{animation:sw-dot 1.2s ease-in-out infinite}
+.sw-dot2{animation-delay:.2s}.sw-dot3{animation-delay:.4s}
+.sw-rec{animation:sw-rec 1.6s ease-in-out infinite}
+.sw-m1{animation:sw-m1 3.2s ease-in-out infinite}
+.sw-m2{animation:sw-m2 4.1s ease-in-out infinite}
+@media (prefers-reduced-motion: reduce){.sw-float,.sw-breathe,.sw-play,.sw-dot,.sw-rec,.sw-m1,.sw-m2{animation:none}}
+</style>
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+<div style="font-family: 'Archivo', system-ui, sans-serif; color: #141414; background: #E7E4DF; width: 100%">
+
+<header style="background: #E7E4DF; border-bottom: 1px solid #D3CEC6">
+<nav aria-label="Main" style="max-width: 1120px; margin: 0 auto; padding: 14px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 24px">
+<a href="/" style="color: #141414; text-decoration: none; display: inline-flex; align-items: baseline; gap: 8px"><span style="font-family: 'Playfair Display', Georgia, serif; font-weight: 800; font-size: 20px; letter-spacing: 0.06em">SESSION</span><span style="font-family: 'Playfair Display', Georgia, serif; font-weight: 500; font-size: 16px; color: #BD4718">with Jade Matthew</span></a>
+<div class="navlinks" style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 22px; font-size: 12px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase">
+<a class="navlink" href="/mental-health/" style="color: #57534E">Mental health</a>
+<a class="navlink" href="/creatives/" style="color: #57534E">Creatives</a>
+<a class="navlink" href="/corporate/" style="color: #57534E">Corporate</a>
+<a class="navlink" href="/media/" style="color: #57534E">Media</a>
+<a class="navlink" href="/speaking/" style="color: #57534E">Speaking</a>
+<a class="navlink" href="/apps/" aria-current="page" style="color: #BD4718">The apps</a>
+<a class="btn" href="https://calendly.com/jade-sessioncare/session-with-jade-discovery" style="background: #BD4718; color: #FFFFFF; text-decoration: none; padding: 14px 18px; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center">Book a free call</a>
+</div>
+</nav>
+</header>
+
+<main>
+<section style="background: #FFFFFF; color: #141414">
+<div style="max-width: 1120px; margin: 0 auto; padding: 88px 24px 96px; display: flex; flex-wrap: wrap; gap: 56px 64px; align-items: center">
+
+<div style="flex: 1 1 460px; min-width: 0; display: flex; flex-direction: column; gap: 22px">
+<p style="margin: 0; display: flex; align-items: center; gap: 12px; font-size: 12px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase"><span aria-hidden="true" style="display: inline-block; width: 28px; height: 1px; background: #DB5A2A"></span>The Session app</p>
+<h1 style="margin: 0; font-family: 'Playfair Display', Georgia, serif; font-weight: 800; font-size: clamp(44px, 6vw, 80px); line-height: 0.98; letter-spacing: -0.035em">Coaching for the days <span style="color: #BD4718">between sessions.</span></h1>
+<p style="margin: 0; font-size: 17px; line-height: 1.6; color: #3D3934">Session is my app. It's built on the Performance State Method, the same way I work with clients, so you can keep working on yourself at home, on the road or at 2am when you can't sleep.</p>
+<ul style="margin: 0; padding: 0; list-style: none; font-size: 16px; line-height: 1.5">
+<li style="padding: 12px 0; border-top: 1px solid #D3CEC6"><span style="color: #BD4718">→</span> Talk things through with Mara, your interactive coach</li>
+<li style="padding: 12px 0; border-top: 1px solid #D3CEC6"><span style="color: #BD4718">→</span> A plan for your week, built around what you're working on</li>
+<li style="padding: 12px 0; border-top: 1px solid #D3CEC6"><span style="color: #BD4718">→</span> Programmes for a quieter mind, boundaries and hard conversations</li>
+<li style="padding: 12px 0; border-top: 1px solid #D3CEC6"><span style="color: #BD4718">→</span> Hypnosis recordings in my voice for sleep, stress and confidence</li>
+<li style="padding: 12px 0; border-top: 1px solid #D3CEC6; border-bottom: 1px solid #D3CEC6"><span style="color: #BD4718">→</span> Neuro sessions to calm down before a big moment</li>
+</ul>
+<a class="btn" href="#waitlists" style="align-self: flex-start; background: #BD4718; color: #FFFFFF; text-decoration: none; font-size: 12px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; padding: 18px 24px">Get early access ↓</a>
+</div>
+
+<div role="img" aria-label="Preview of the Session app on a phone: this week's programme, a conversation with Mara, a sleep recording and a two minute Neuro session" style="flex: 1 1 360px; min-width: 0; display: flex; justify-content: center; position: relative; padding: 12px 0 24px">
+<div class="sw-float" style="width: 290px; max-width: 100%; border-radius: 44px; background: #FFFFFF; border: 1px solid #D3CEC6; padding: 10px; box-shadow: 0 40px 80px rgba(0,0,0,0.45); box-sizing: border-box">
+<div style="border-radius: 34px; background: #F4F1EB; color: #141414; overflow: hidden; display: flex; flex-direction: column">
+<div style="display: flex; justify-content: center; padding: 10px 0 4px"><div style="width: 86px; height: 22px; border-radius: 12px; background: #DCD7D0"></div></div>
+<div style="padding: 10px 18px 0; display: flex; justify-content: space-between; align-items: center">
+<span style="font-family: 'Playfair Display', Georgia, serif; font-weight: 700; font-size: 15px; letter-spacing: 0.04em">Your week</span>
+<span style="width: 28px; height: 28px; border-radius: 50%; background: #DB5A2A; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700">S</span>
+</div>
+<div style="padding: 14px 18px 6px">
+<p style="margin: 0; font-size: 11px; color: #57534E">Tuesday evening</p>
+<p style="margin: 2px 0 0; font-family: 'Playfair Display', Georgia, serif; font-weight: 800; font-size: 24px; line-height: 1.1">Good evening, Sam</p>
+</div>
+<div style="margin: 10px 14px 0; background: #FFFFFF; border: 1px solid #E2DDD5; padding: 12px; display: flex; flex-direction: column; gap: 8px">
+<div style="display: flex; justify-content: space-between; font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase"><span style="color: #BD4718">This week</span><span style="color: #57534E">Day 3 of 7</span></div>
+<p style="margin: 0; font-size: 14px; font-weight: 600">A quieter mind</p>
+<div style="height: 5px; background: #E7E4DF"><div style="width: 42%; height: 100%; background: #DB5A2A"></div></div>
+</div>
+<div style="margin: 10px 14px 0; display: flex; flex-direction: column; gap: 6px">
+<div style="align-self: flex-start; max-width: 84%; background: #FFFFFF; color: #141414; border: 1px solid #E2DDD5; padding: 9px 11px; font-size: 12px; line-height: 1.4; border-radius: 14px 14px 14px 4px"><span style="display: block; font-size: 9px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #BD4718; margin-bottom: 3px">Mara</span>You said the call went better today. What did you do differently?</div>
+<div style="align-self: flex-end; max-width: 80%; background: #F4C6B4; padding: 9px 11px; font-size: 12px; line-height: 1.4; border-radius: 14px 14px 4px 14px">I paused before I answered.</div>
+<div style="align-self: flex-start; background: #FFFFFF; border: 1px solid #E2DDD5; padding: 9px 12px; border-radius: 14px 14px 14px 4px; display: flex; gap: 4px"><span class="sw-dot" style="width: 6px; height: 6px; border-radius: 50%; background: #57534E"></span><span class="sw-dot sw-dot2" style="width: 6px; height: 6px; border-radius: 50%; background: #57534E"></span><span class="sw-dot sw-dot3" style="width: 6px; height: 6px; border-radius: 50%; background: #57534E"></span></div>
+</div>
+<div style="margin: 10px 14px 0; background: #DB5A2A; padding: 12px; display: flex; gap: 12px; align-items: center">
+<span style="flex: none; width: 34px; height: 34px; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center"><svg width="12" height="14" viewBox="0 0 12 14"><path d="M1 1l10 6-10 6z" fill="#141414"></path></svg></span>
+<div style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 6px">
+<div style="display: flex; justify-content: space-between; font-size: 12px; font-weight: 600"><span>Sleep · Jade</span><span>10 min</span></div>
+<div style="height: 4px; background: rgba(14,14,15,0.25)"><div class="sw-play" style="width: 30%; height: 100%; background: #FFFFFF"></div></div>
+</div>
+</div>
+<div style="margin: 16px 0 0; padding: 12px 18px 16px; border-top: 1px solid #E2DDD5; display: flex; justify-content: space-between; font-size: 10px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #57534E"><span style="color: #BD4718">Today</span><span>Mara</span><span>Listen</span><span>Journal</span></div>
+</div>
+</div>
+<div style="position: absolute; right: max(0px, calc(50% - 250px)); bottom: 40px; width: 150px; background: #F4F1EB; color: #141414; padding: 14px; box-shadow: 0 20px 40px rgba(0,0,0,0.4); display: flex; flex-direction: column; align-items: center; gap: 10px">
+<p style="margin: 0; font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #BD4718">Neuro session</p>
+<div style="width: 76px; height: 76px; display: flex; align-items: center; justify-content: center"><div class="sw-breathe" style="width: 76px; height: 76px; border-radius: 50%; background: #DB5A2A"></div></div>
+<p style="margin: 0; font-size: 12px; font-weight: 600">2 minutes</p>
+</div>
+</div>
+
+</div>
+</section>
+
+<section id="waitlists" style="max-width: 1120px; margin: 0 auto; padding: 96px 24px; display: flex; flex-direction: column; gap: 32px">
+<h2 style="margin: 0; font-family: 'Playfair Display', Georgia, serif; font-weight: 800; font-size: clamp(40px, 5.4vw, 64px); line-height: 1; letter-spacing: -0.035em">Join <span style="color: #DB5A2A">the waitlist.</span></h2>
+<div style="display: flex; flex-wrap: wrap; gap: 16px">
+<form class="waitlist" data-list="app" data-source="apps" aria-label="Join the Session app waitlist" novalidate style="flex: 1 1 420px; min-width: 0; background: #DB5A2A; color: #141414; padding: 32px; display: flex; flex-direction: column; gap: 12px">
+<h3 style="margin: 0; font-family: 'Playfair Display', Georgia, serif; font-weight: 800; font-size: 28px">Get early access to the app</h3>
+<div class="wl-fields" style="display: flex; flex-direction: column; gap: 12px">
+<label style="font-size: 12px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase">Your name<input type="text" name="name" required maxlength="120" autocomplete="name" style="font: inherit; font-size: 16px; padding: 14px 16px; border: 1px solid #141414; background: #F4F1EB; color: #141414; min-height: 50px; box-sizing: border-box; border-radius: 0; width: 100%; margin-top: 8px"></label>
+<label style="font-size: 12px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase">Your email<input type="email" name="email" required maxlength="200" autocomplete="email" style="font: inherit; font-size: 16px; padding: 14px 16px; border: 1px solid #141414; background: #F4F1EB; color: #141414; min-height: 50px; box-sizing: border-box; border-radius: 0; width: 100%; margin-top: 8px"></label>
+<label class="wl-consent" style="display: flex; gap: 10px; align-items: flex-start; font-size: 14px; line-height: 1.5"><input type="checkbox" name="consent" required style="width: 18px; height: 18px; margin-top: 2px; accent-color: #141414"> Email me when the Session app is ready. I can unsubscribe any time.</label>
+<input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" class="wl-hp">
+<button type="submit" style="font: inherit; font-size: 12px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; background: #141414; color: #F4F1EB; border: 0; padding: 0 22px; min-height: 50px; cursor: pointer">Join the waitlist</button>
+</div>
+<p class="wl-msg" role="status" aria-live="polite" style="margin: 0; font-size: 14px; font-weight: 600"></p>
+</form>
+
+<form class="waitlist" data-list="group" data-source="apps groups" aria-label="Join the group programme waitlist" novalidate style="flex: 1 1 420px; min-width: 0; background: #FFFFFF; border: 1px solid #D3CEC6; padding: 32px; display: flex; flex-direction: column; gap: 12px">
+<p style="margin: 0; font-size: 12px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: #BD4718">Group programmes</p>
+<h3 style="margin: 0; font-family: 'Playfair Display', Georgia, serif; font-weight: 800; font-size: 28px">Join a small group</h3>
+<div class="wl-fields" style="display: flex; flex-direction: column; gap: 12px">
+<fieldset style="margin: 0; padding: 0; border: 0; display: flex; flex-direction: column; gap: 6px"><legend style="font-size: 12px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 6px">Which group?</legend>
+<label style="display: flex; gap: 10px; align-items: center; font-size: 15px; min-height: 36px"><input type="radio" name="group" value="Creative confidence" required style="width: 18px; height: 18px; accent-color: #BD4718"> Creative confidence</label>
+<label style="display: flex; gap: 10px; align-items: center; font-size: 15px; min-height: 36px"><input type="radio" name="group" value="Performance and confidence" style="width: 18px; height: 18px; accent-color: #BD4718"> Performance and confidence</label>
+</fieldset>
+<label style="font-size: 12px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase">Your name<input type="text" name="name" required maxlength="120" autocomplete="name" style="font: inherit; font-size: 16px; padding: 14px 16px; border: 1px solid #C5BFB6; background: #F3F1ED; color: #141414; min-height: 50px; box-sizing: border-box; border-radius: 0; width: 100%; margin-top: 8px"></label>
+<label style="font-size: 12px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase">Your email<input type="email" name="email" required maxlength="200" autocomplete="email" style="font: inherit; font-size: 16px; padding: 14px 16px; border: 1px solid #C5BFB6; background: #F3F1ED; color: #141414; min-height: 50px; box-sizing: border-box; border-radius: 0; width: 100%; margin-top: 8px"></label>
+<label class="wl-consent" style="display: flex; gap: 10px; align-items: flex-start; font-size: 14px; line-height: 1.5; color: #3D3934"><input type="checkbox" name="consent" required style="width: 18px; height: 18px; margin-top: 2px; accent-color: #BD4718"> Email me when the next group opens. I can unsubscribe any time.</label>
+<input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" class="wl-hp">
+<button type="submit" class="btn" style="font: inherit; font-size: 12px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; background: #BD4718; color: #FFFFFF; border: 0; padding: 0 22px; min-height: 50px; cursor: pointer">Join the group waitlist</button>
+</div>
+<p class="wl-msg" role="status" aria-live="polite" style="margin: 0; font-size: 14px; font-weight: 600; color: #141414"></p>
+<p style="margin: 0; font-size: 13px; color: #57534E">Online, a few weeks long, with live sessions each week.</p>
+</form>
+</div>
+</section>
+
+<section style="border-top: 1px solid #D3CEC6">
+<div style="max-width: 1120px; margin: 0 auto; padding: 96px 24px; display: flex; flex-wrap: wrap; gap: 40px 56px; align-items: center">
+<a href="/corporate/#mara-trailer" aria-label="Watch the Mara trailer" style="flex: 1 1 420px; min-width: 0; display: block; position: relative; aspect-ratio: 16 / 9; background: #F3F1ED; overflow: hidden; text-decoration: none; color: #141414; box-shadow: 0 24px 48px rgba(14,14,15,0.2)">
+<div aria-hidden="true" style="position: absolute; left: 0; right: 0; top: 0; padding: 12px 16px; font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; display: flex; align-items: center; gap: 8px"><span class="sw-rec" style="width: 8px; height: 8px; border-radius: 50%; background: #E5484D"></span>Rehearsal · Pitch</div>
+<div aria-hidden="true" style="position: absolute; left: 8%; bottom: 0; width: 42%; height: 76%; display: flex; flex-direction: column; align-items: center; justify-content: flex-end">
+<div style="width: 34%; aspect-ratio: 1 / 1; border-radius: 50%; background: #C5BFB6"></div>
+<div style="width: 78%; height: 46%; margin-top: 6%; border-radius: 48% 48% 0 0; background: #C5BFB6"></div>
+</div>
+<div aria-hidden="true" style="position: absolute; right: 6%; top: 24%; width: 36%; display: flex; flex-direction: column; gap: 10px">
+<div style="display: flex; flex-direction: column; gap: 3px"><span style="font-size: 11px">Pace</span><div style="height: 4px; background: #E2DDD5"><div class="sw-m1" style="width: 62%; height: 100%; background: #DB5A2A"></div></div></div>
+<div style="display: flex; flex-direction: column; gap: 3px"><span style="font-size: 11px">Presence</span><div style="height: 4px; background: #E2DDD5"><div class="sw-m2" style="width: 48%; height: 100%; background: #DB5A2A"></div></div></div>
+</div>
+<span style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 68px; height: 68px; border-radius: 50%; background: #DB5A2A; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="22" height="26" viewBox="0 0 24 28"><path d="M3 2l19 12L3 26z" fill="#141414"></path></svg></span>
+</a>
+<div style="flex: 1 1 380px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
+<p style="margin: 0; display: flex; align-items: center; gap: 12px; font-size: 12px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase"><span aria-hidden="true" style="display: inline-block; width: 28px; height: 1px; background: #DB5A2A"></span>Mara · for teams</p>
+<h2 style="margin: 0; font-family: 'Playfair Display', Georgia, serif; font-weight: 800; font-size: clamp(32px, 4vw, 48px); line-height: 1.02; letter-spacing: -0.03em">Practise presentations <span style="color: #DB5A2A">on camera.</span></h2>
+<p style="margin: 0; font-size: 16px; line-height: 1.6; color: #3D3934">Mara is my interactive performance coach for companies. People rehearse on camera and get feedback on pace, pauses, clarity and presence, so they can practise between workshops.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 10px">
+<a class="btn" href="/corporate/#mara-trailer" style="background: #BD4718; color: #FFFFFF; text-decoration: none; font-size: 12px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; padding: 18px 22px">Watch the trailer</a>
+<a href="https://mara.thesessionlab.com" style="color: #141414; border: 1px solid #141414; text-decoration: none; font-size: 12px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; padding: 17px 22px">See Mara</a>
+</div>
+</div>
+</div>
+</section>
+</main>
+
+<footer style="background: #0E0E0F; color: rgba(244,241,235,0.6); font-size: 13px; line-height: 1.6">
+<div style="max-width: 1120px; margin: 0 auto; padding: 32px 24px; display: flex; flex-wrap: wrap; gap: 20px; justify-content: space-between">
+<p style="margin: 0; max-width: 560px">© 2026 Jade Matthew · Session Care Ltd · London. App screens are illustrative.</p>
+<p style="margin: 0"><a href="/mental-health/" style="color: #F4F1EB">Mental health</a> · <a href="/creatives/" style="color: #F4F1EB">Creatives</a> · <a href="/corporate/" style="color: #F4F1EB">Corporate</a> · <a href="/media/" style="color: #F4F1EB">Media</a> · <a href="/speaking/" style="color: #F4F1EB">Speaking</a> · <a href="/apps/" style="color: #F4F1EB">The apps</a> · <a href="mailto:jade@sessioncare.co.uk" style="color: #F4F1EB">Email Jade</a></p>
+</div>
+</footer>
+
+</div>
+<a class="mobile-cta" href="https://calendly.com/jade-sessioncare/session-with-jade-discovery">Book a free call</a>
+<script src="/assets/waitlist.js" defer></script>
+</body>
+</html>
