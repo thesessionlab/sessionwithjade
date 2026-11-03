@@ -1,33 +1,139 @@
 # Session with Jade. Search engines and AI assistants are welcome.
+# Old pages from an earlier version are kept out of search.
+
 User-agent: *
 Allow: /
+Disallow: /apps/
+Disallow: /corporate/
+Disallow: /creatives/
+Disallow: /mental-health/
+Disallow: /media/
+Disallow: /speaking/
 
-# AI search and answer engines (citations in ChatGPT, Claude, Perplexity, Copilot, Apple, DuckDuckGo)
 User-agent: OAI-SearchBot
 Allow: /
+Disallow: /apps/
+Disallow: /corporate/
+Disallow: /creatives/
+Disallow: /mental-health/
+Disallow: /media/
+Disallow: /speaking/
+
 User-agent: ChatGPT-User
 Allow: /
+Disallow: /apps/
+Disallow: /corporate/
+Disallow: /creatives/
+Disallow: /mental-health/
+Disallow: /media/
+Disallow: /speaking/
+
 User-agent: GPTBot
 Allow: /
+Disallow: /apps/
+Disallow: /corporate/
+Disallow: /creatives/
+Disallow: /mental-health/
+Disallow: /media/
+Disallow: /speaking/
+
 User-agent: Claude-SearchBot
 Allow: /
+Disallow: /apps/
+Disallow: /corporate/
+Disallow: /creatives/
+Disallow: /mental-health/
+Disallow: /media/
+Disallow: /speaking/
+
 User-agent: Claude-User
 Allow: /
+Disallow: /apps/
+Disallow: /corporate/
+Disallow: /creatives/
+Disallow: /mental-health/
+Disallow: /media/
+Disallow: /speaking/
+
 User-agent: ClaudeBot
 Allow: /
+Disallow: /apps/
+Disallow: /corporate/
+Disallow: /creatives/
+Disallow: /mental-health/
+Disallow: /media/
+Disallow: /speaking/
+
 User-agent: PerplexityBot
 Allow: /
+Disallow: /apps/
+Disallow: /corporate/
+Disallow: /creatives/
+Disallow: /mental-health/
+Disallow: /media/
+Disallow: /speaking/
+
 User-agent: Perplexity-User
 Allow: /
+Disallow: /apps/
+Disallow: /corporate/
+Disallow: /creatives/
+Disallow: /mental-health/
+Disallow: /media/
+Disallow: /speaking/
+
 User-agent: Google-Extended
 Allow: /
+Disallow: /apps/
+Disallow: /corporate/
+Disallow: /creatives/
+Disallow: /mental-health/
+Disallow: /media/
+Disallow: /speaking/
+
+User-agent: Googlebot
+Allow: /
+Disallow: /apps/
+Disallow: /corporate/
+Disallow: /creatives/
+Disallow: /mental-health/
+Disallow: /media/
+Disallow: /speaking/
+
 User-agent: Applebot
 Allow: /
+Disallow: /apps/
+Disallow: /corporate/
+Disallow: /creatives/
+Disallow: /mental-health/
+Disallow: /media/
+Disallow: /speaking/
+
 User-agent: Applebot-Extended
 Allow: /
+Disallow: /apps/
+Disallow: /corporate/
+Disallow: /creatives/
+Disallow: /mental-health/
+Disallow: /media/
+Disallow: /speaking/
+
 User-agent: Bingbot
 Allow: /
+Disallow: /apps/
+Disallow: /corporate/
+Disallow: /creatives/
+Disallow: /mental-health/
+Disallow: /media/
+Disallow: /speaking/
+
 User-agent: DuckAssistBot
 Allow: /
+Disallow: /apps/
+Disallow: /corporate/
+Disallow: /creatives/
+Disallow: /mental-health/
+Disallow: /media/
+Disallow: /speaking/
 
 Sitemap: https://sessionwithjade.com/sitemap.xml
