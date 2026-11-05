@@ -43,11 +43,17 @@
           throw err;
         });
       };
+      // Copy into the Mara CRM too, so every list lives in one place.
+      try {
+        fetch("https://mara.thesessionlab.com/api/intake", { method: "POST", headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ form: "jade-waitlist", name: row.name, email: row.email, interests: [], waitlist: interests.join(", "), page: location.pathname,
+            consent: true, consent_wording: ((f.querySelector(".wl-consent") || {}).textContent || "Waitlist").trim().slice(0, 400) }) }).catch(function () {});
+      } catch (x) {}
       attempt(1).then(function () {
         f.querySelector(".wl-fields").style.display = "none";
         msg.textContent = "Thanks " + name.split(" ")[0] + ", you're on the list. I'll email you soon.";
       }).catch(function () {
-        msg.textContent = "That didn't send. Please try again, or email jade@sessioncare.co.uk.";
+        msg.textContent = "That didn't send. Please try again, or email jade@thesessionlab.com.";
         btn.disabled = false; btn.textContent = label;
       });
     });

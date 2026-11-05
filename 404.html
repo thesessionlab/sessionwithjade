@@ -127,14 +127,19 @@
 <p class="legal">&copy; Jade Matthew &middot; Session Care Ltd &middot; London &middot; <a href="/cookies.html">Cookies</a>. Coaching and performance training, not medical treatment. If you are working with a diagnosed condition, I am happy to work alongside your GP or therapist.</p>
 </div></footer>
 <script>
-var FORM_ENDPOINT = ""; // paste a Formspree (or similar) URL here; until then forms open an email
+var CRM_ENDPOINT = "https://mara.thesessionlab.com/api/intake"; // the Mara CRM
 var FALLBACK_EMAIL = "jade@thesessionlab.com";
 var mb=document.querySelector('.menubtn');
 mb.addEventListener('click',function(){var o=document.body.classList.toggle('menu-open');mb.textContent=o?'Close':'Menu';mb.setAttribute('aria-expanded',o);document.getElementById('menu').setAttribute('aria-hidden',!o)});
 document.querySelectorAll('[data-book]').forEach(function(a){a.href="https://calendly.com/jade-sessioncare/session-with-jade-discovery";a.target="_blank";a.rel="noopener"});
 function send(d,done){
-  if(FORM_ENDPOINT){fetch(FORM_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(d)}).then(done).catch(done)}
-  else{var b=Object.keys(d).map(function(k){return k+': '+d[k]}).join('\n');location.href='mailto:'+FALLBACK_EMAIL+'?subject='+encodeURIComponent((d.list||'Private enquiry')+' · sessionwithjade.com')+'&body='+encodeURIComponent(b);done()}
+  // Every form goes to the Mara CRM (5 Nov 2026). If that fails, it falls back to an email.
+  var key=d.list==='Mailing list'?'jade-list':d.enquiry_for==='Someone I represent'?'creative':d.enquiry_for==='An organisation'?'jade-org':d.enquiry_for==='An event'?'jade-speaking':'jade-enquiry';
+  var body={};Object.keys(d).forEach(function(k){body[k]=d[k]});body.form=key;body.page=location.pathname;
+  if(d.organisation||d.role_agency)body.company=d.organisation||d.role_agency;
+  if(key==='jade-list'){body.consent=true;body.consent_wording='Join the Session with Jade list for early access to group programmes, the Session app and new writing from Jade.'}
+  var mail=function(){var b=Object.keys(d).map(function(k){return k+': '+d[k]}).join('\n');location.href='mailto:'+FALLBACK_EMAIL+'?subject='+encodeURIComponent((d.list||'Private enquiry')+' · sessionwithjade.com')+'&body='+encodeURIComponent(b);done()};
+  fetch(CRM_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(body)}).then(function(r){if(!r.ok)throw new Error(r.status);done()}).catch(mail);
 }
 document.querySelectorAll('form.f,form.sub').forEach(function(f){
   f.addEventListener('submit',function(e){e.preventDefault();var em=f.querySelector('[type=email]');if(em&&!em.value){em.focus();return}
