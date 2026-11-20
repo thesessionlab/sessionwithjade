@@ -345,3 +345,30 @@ form.f button[disabled]{opacity:.5;cursor:wait}
 .sticky{right:calc(var(--g) + 76px)}
 @media (max-width:900px){.testgrid{grid-template-columns:1fr;gap:28px}}
 @media (max-width:560px){.sticky{right:auto;left:12px}.cookie{left:12px;right:12px;bottom:12px}}
+
+/* sales and funnel layer (20 Nov 2026) */
+.btn.light{background:#fff;color:var(--ink);border-color:#fff}
+.btn.light:hover{background:transparent;color:#fff}
+.btn.ghostw{background:transparent;color:#fff;border-color:rgba(255,255,255,.8)}
+.btn.ghostw:hover{background:#fff;color:var(--ink)}
+.hero .herobtns{margin-top:26px}
+.test .price{color:var(--ink);text-transform:uppercase;font-size:14px;margin-bottom:14px}
+.offers{padding-bottom:0}
+.pup{border:1px solid var(--ink);padding:clamp(24px,3vw,40px);display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(24px,4vw,60px);align-items:start}
+.pup h2{font-size:clamp(20px,1.6vw,24px)}
+.pup .inc{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.pup .inc div{border-top:1px solid var(--line);padding-top:12px}
+.pup .inc h4{margin-bottom:6px}
+.pup .inc p{font-size:15px;color:var(--mute)}
+.formats{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:36px}
+.formats div{border-top:1px solid var(--ink);padding-top:14px}
+.formats .n{display:block;color:var(--mute);font-size:13px;text-transform:uppercase;margin-bottom:10px}
+.formats h4{margin-bottom:6px}
+.tools{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(30px,4vw,56px) 24px;margin-top:40px}
+.tool .im{aspect-ratio:16/10;overflow:hidden;background:#ddd;margin-bottom:16px}
+.tool .im img{width:100%;height:100%;object-fit:cover;transition:transform .8s}
+.tool:hover .im img{transform:scale(1.03)}
+.tool .meta{display:flex;justify-content:space-between;font-size:13px;text-transform:uppercase;color:var(--mute);margin-bottom:10px}
+.tool h3{font-size:16px;margin-bottom:8px}
+.tool p{font-size:15px;color:var(--mute);margin-bottom:14px;max-width:520px}
+@media (max-width:900px){.pup,.pup .inc,.formats,.tools{grid-template-columns:1fr}.hero .herobtns .btn{padding:13px 18px;font-size:14px}}
