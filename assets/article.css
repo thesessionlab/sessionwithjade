@@ -57,3 +57,12 @@ footer a{text-decoration:none;opacity:.7}
 footer a:hover{opacity:1;color:var(--gold-lt)}
 .foot-row{display:flex;flex-wrap:wrap;gap:1rem 2rem;justify-content:space-between;align-items:center}
 .foot-row .legal{font-size:.78rem;color:var(--muted-dark)}
+.toolcta{padding:50px 20px}
+.toolcta .wrap{max-width:760px;margin:0 auto}
+.toolcta .tcin{background:#fff;border:1px solid rgba(10,26,58,.15);padding:32px 28px}
+.toolcta .eb{font-size:13px;letter-spacing:.12em;text-transform:uppercase;opacity:.7}
+.toolcta h2{font-size:clamp(22px,2.2vw,28px);margin:8px 0 0}
+.toolcta .d{margin-top:12px;font-size:18px}
+.toolcta .b{margin-top:22px;display:flex;flex-wrap:wrap;gap:16px 22px;align-items:center}
+.toolcta .tl{text-decoration:underline}
+.toolcta .tcin{color:#0a1a3a}.toolcta .tl{color:#0a1a3a}

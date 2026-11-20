@@ -375,3 +375,8 @@ form.f button[disabled]{opacity:.5;cursor:wait}
 /* the chat pill is wide, so the enquiry button moves to the bottom left */
 .sticky{right:auto;left:var(--g)}
 @media (max-width:560px){.sticky{left:12px}}
+.toolcta{padding:60px 0}
+.toolcta .tcin{max-width:760px;background:#fff;border:1px solid rgba(10,26,58,.12);padding:34px 30px}
+.toolcta h2{font-size:clamp(22px,2vw,28px);margin-top:8px}
+.toolcta .d{margin-top:12px;font-size:18px}
+.toolcta .b{margin-top:22px;display:flex;flex-wrap:wrap;gap:16px 22px;align-items:center}

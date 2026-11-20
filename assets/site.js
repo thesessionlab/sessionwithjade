@@ -98,6 +98,28 @@
     var c = document.querySelector('.cookie'); if (c) c.classList.remove('show');
     setTimeout(mailPopup, 2500);
   }
+
+  /* LinkedIn Insight Tag. Off until LINKEDIN_PARTNER is filled in AND the visitor has said yes
+     to advertising cookies (session_consent ends ".d1", the same flag the Session sites use).
+     The banner on this site only asks about analytics today, so this stays inert until an
+     advertising choice is added. Only page views and conversion ids are sent: never answers,
+     names or emails. */
+  var LINKEDIN_PARTNER = '';
+  var LINKEDIN_CONVERSIONS = { lead: '', application: '' };
+  function adsOk() { var c = getConsent(); return !!c && /^v1\.a[01]\.d1$/.test(c); }
+  function loadLinkedIn() {
+    if (!LINKEDIN_PARTNER || !adsOk() || window._linkedin_partner_id) return;
+    window._linkedin_partner_id = LINKEDIN_PARTNER;
+    window._linkedin_data_partner_ids = (window._linkedin_data_partner_ids || []).concat(LINKEDIN_PARTNER);
+    if (!window.lintrk) { window.lintrk = function (a, b) { window.lintrk.q.push([a, b]); }; window.lintrk.q = []; }
+    var s = document.createElement('script'); s.async = true; s.src = 'https://snap.licdn.com/li.lms-analytics/insight.min.js'; document.head.appendChild(s);
+  }
+  loadLinkedIn(); window.addEventListener('maraconsent', loadLinkedIn);
+  window.sessionTrack = window.sessionTrack || function (name) {
+    var id = name === 'generate_lead' ? LINKEDIN_CONVERSIONS.application : name === 'sign_up' ? LINKEDIN_CONVERSIONS.lead : '';
+    if (id && window.lintrk && adsOk()) try { window.lintrk('track', { conversion_id: Number(id) }); } catch (x) {}
+  };
+
   var cb = document.querySelector('.cookie');
   if (cb) {
     if (getConsent()) cb.remove();
