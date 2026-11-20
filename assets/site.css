@@ -372,3 +372,6 @@ form.f button[disabled]{opacity:.5;cursor:wait}
 .tool h3{font-size:16px;margin-bottom:8px}
 .tool p{font-size:15px;color:var(--mute);margin-bottom:14px;max-width:520px}
 @media (max-width:900px){.pup,.pup .inc,.formats,.tools{grid-template-columns:1fr}.hero .herobtns .btn{padding:13px 18px;font-size:14px}}
+/* the chat pill is wide, so the enquiry button moves to the bottom left */
+.sticky{right:auto;left:var(--g)}
+@media (max-width:560px){.sticky{left:12px}}
