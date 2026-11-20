@@ -42,6 +42,7 @@
       if (e.data.type === 'mara-form-height' && e.data.height > 200) frame.style.height = (e.data.height + 24) + 'px';
       if (e.data.type === 'mara-form-done' && e.data.form === key) {
         try { if (window.sessionTrack) window.sessionTrack(key === 'private_application' ? 'generate_lead' : 'sign_up', { method: key }); } catch (_) {}
+        if (e.data.submission) document.querySelectorAll('[data-guide]').forEach(function (a) { a.href = MARA + '/g/' + a.getAttribute('data-guide') + '/' + encodeURIComponent(e.data.submission); });
         var next = box.getAttribute('data-done');
         if (next) { var el = document.getElementById(next); if (el) el.hidden = false; }
         try { window.scrollTo({ top: box.getBoundingClientRect().top + scrollY - 90, behavior: 'smooth' }); } catch (_) {}
