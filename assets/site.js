@@ -92,8 +92,8 @@
   /* cookie consent: the same session_consent cookie the Session sites use (v1.a1 = analytics yes) */
   function getConsent() { var m = document.cookie.match(/(?:^|; )session_consent=([^;]*)/); return m ? decodeURIComponent(m[1]) : null; }
   function setConsent(yes) {
-    document.cookie = 'session_consent=' + (yes ? 'v1.a1' : 'v1.a0') + '; max-age=31536000; path=/; SameSite=Lax; Secure';
-    window.maraConsent = { analytics: !!yes };
+    document.cookie = 'session_consent=' + (yes ? 'v1.a1.d1' : 'v1.a0.d0') + '; max-age=15552000; path=/; SameSite=Lax; Secure';
+    window.maraConsent = { analytics: !!yes, ads: !!yes };
     try { window.dispatchEvent(new Event('maraconsent')); } catch (x) {}
     var c = document.querySelector('.cookie'); if (c) c.classList.remove('show');
     setTimeout(mailPopup, 2500);
@@ -104,6 +104,15 @@
      The banner on this site only asks about analytics today, so this stays inert until an
      advertising choice is added. Only page views and conversion ids are sent: never answers,
      names or emails. */
+  /* Meta pixel: the same pixel as thesessionlab.com and Mara. Loads only after Accept,
+     sends page views and the names of steps (Lead), never names, emails or answers. */
+  var META_PIXEL = '1684505053286111';
+  function loadMeta() {
+    if (!META_PIXEL || !adsOk() || window.fbq) return;
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    window.fbq('set', 'autoConfig', false, META_PIXEL);
+    window.fbq('init', META_PIXEL); window.fbq('track', 'PageView');
+  }
   var LINKEDIN_PARTNER = '';
   var LINKEDIN_CONVERSIONS = { lead: '', application: '' };
   function adsOk() { var c = getConsent(); return !!c && /^v1\.a[01]\.d1$/.test(c); }
@@ -114,10 +123,11 @@
     if (!window.lintrk) { window.lintrk = function (a, b) { window.lintrk.q.push([a, b]); }; window.lintrk.q = []; }
     var s = document.createElement('script'); s.async = true; s.src = 'https://snap.licdn.com/li.lms-analytics/insight.min.js'; document.head.appendChild(s);
   }
-  loadLinkedIn(); window.addEventListener('maraconsent', loadLinkedIn);
+  loadLinkedIn(); loadMeta(); window.addEventListener('maraconsent', function () { loadLinkedIn(); loadMeta(); });
   window.sessionTrack = window.sessionTrack || function (name) {
     var id = name === 'generate_lead' ? LINKEDIN_CONVERSIONS.application : name === 'sign_up' ? LINKEDIN_CONVERSIONS.lead : '';
     if (id && window.lintrk && adsOk()) try { window.lintrk('track', { conversion_id: Number(id) }); } catch (x) {}
+    if (window.fbq && adsOk()) try { window.fbq('track', name === 'generate_lead' ? 'SubmitApplication' : 'Lead'); } catch (x) {}
   };
 
   var cb = document.querySelector('.cookie');
