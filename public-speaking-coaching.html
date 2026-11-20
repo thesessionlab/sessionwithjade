@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en-GB"><head>
-<meta charset="utf-8"><script src="/track.js"></script><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Public Speaking Coach in London and Online · Jade Matthew</title>
 <meta name="description" content="Public speaking coaching in London and online with Jade Matthew, a professional actress of twenty years, clinical hypnotherapist and Master NLP Practitioner. Presentations, pitches, keynotes, interviews and the nerves that come with them.">
 <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
@@ -30,7 +30,8 @@
 <section class="phero split"><div class="wrap">
   <div><p class="eb">Public speaking coaching</p><h1>Public speaking coaching in London and online.</h1>
   <p class="lede">For presentations, pitches, keynotes, panels and interviews, when you know your material but your voice, your body or your nerves let you down in the room.</p>
-  <div class="btns"><a class="btn" href="enquire.html?for=self">Make a private enquiry</a></div></div>
+  <div class="btns"><a class="btn" href="enquire.html?for=self">Make a private enquiry</a></div>
+  <p style="margin-top:22px"><a class="tl" href="https://mara.thesessionlab.com/f/public_speaking_readiness?utm_source=sessionwithjade&amp;utm_medium=site">Or take the free public speaking readiness test</a></p></div>
   <img src="assets/content/pb-tripod.jpg" alt="Rehearsing on camera">
 </div></section>
 
@@ -81,37 +82,10 @@
   <div><ul><li><a href="https://www.instagram.com/sessionwithjade">Instagram</a></li><li><a href="about.html">About Jade</a></li><li><a href="articles/why-capable-people-freeze-under-pressure.html">Writing</a></li><li><a href="https://thesessionapp.com">Session app</a></li><li><a href="https://mara.thesessionlab.com">Mara</a></li></ul></div>
   <div><p>Subscribe to Session with Jade</p><form class="sub" novalidate><input type="hidden" name="list" value="Mailing list"><input type="email" name="email" placeholder="Enter Email" required aria-label="Email"><button type="submit">Submit</button><span class="thanks">Thank you, you are on the list.</span></form></div>
 </div>
-<p class="legal">&copy; Jade Matthew &middot; Session Care Ltd &middot; London &middot; <a href="/cookies.html">Cookies</a>. Coaching and performance training, not medical treatment. If you are working with a diagnosed condition, I am happy to work alongside your GP or therapist.</p>
+<p class="legal">&copy; Jade Matthew &middot; Session Care Ltd &middot; London. Coaching and performance training, not medical treatment. If you are working with a diagnosed condition, I am happy to work alongside your GP or therapist.</p>
 </div></footer>
-<script>
-var CRM_ENDPOINT = "https://mara.thesessionlab.com/api/intake"; // the Mara CRM
-var FALLBACK_EMAIL = "jade@thesessionlab.com";
-var mb=document.querySelector('.menubtn');
-mb.addEventListener('click',function(){var o=document.body.classList.toggle('menu-open');mb.textContent=o?'Close':'Menu';mb.setAttribute('aria-expanded',o);document.getElementById('menu').setAttribute('aria-hidden',!o)});
-document.querySelectorAll('[data-book]').forEach(function(a){a.href="https://calendly.com/jade-sessioncare/session-with-jade-discovery";a.target="_blank";a.rel="noopener"});
-function send(d,done){
-  // Every form goes to the Mara CRM (5 Nov 2026). If that fails, it falls back to an email.
-  var key=d.list==='Mailing list'?'jade-list':d.enquiry_for==='Someone I represent'?'creative':d.enquiry_for==='An organisation'?'jade-org':d.enquiry_for==='An event'?'jade-speaking':'jade-enquiry';
-  var body={};Object.keys(d).forEach(function(k){body[k]=d[k]});body.form=key;body.page=location.pathname;
-  if(d.organisation||d.role_agency)body.company=d.organisation||d.role_agency;
-  if(key==='jade-list'){body.consent=true;body.consent_wording='Join the Session with Jade list for early access to group programmes, the Session app and new writing from Jade.'}
-  var mail=function(){var b=Object.keys(d).map(function(k){return k+': '+d[k]}).join('\n');location.href='mailto:'+FALLBACK_EMAIL+'?subject='+encodeURIComponent((d.list||'Private enquiry')+' · sessionwithjade.com')+'&body='+encodeURIComponent(b);done()};
-  fetch(CRM_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(body)}).then(function(r){if(!r.ok)throw new Error(r.status);done()}).catch(mail);
-}
-document.querySelectorAll('form.f,form.sub').forEach(function(f){
-  f.addEventListener('submit',function(e){e.preventDefault();var em=f.querySelector('[type=email]');if(em&&!em.value){em.focus();return}
-    var d={};new FormData(f).forEach(function(v,k){d[k]=d[k]?d[k]+', '+v:v});
-    send(d,function(){f.classList.add('done');try{localStorage.setItem('swj_mail','1')}catch(x){}})});
-});
-(function(){var m=document.querySelector('.mail'),seen=false;try{seen=localStorage.getItem('swj_mail')}catch(x){}
-  if(seen||location.pathname.indexOf('enquire')>-1)return;
-  var show=function(){m.classList.add('show');window.removeEventListener('scroll',onS)};
-  var onS=function(){if(window.scrollY>window.innerHeight*.6)show()};
-  window.addEventListener('scroll',onS);setTimeout(show,9000);
-  m.querySelector('.x').addEventListener('click',function(){m.classList.remove('show');try{localStorage.setItem('swj_mail','1')}catch(x){}});
-})();
-if(location.pathname.indexOf('enquire')>-1){var s=document.querySelector('.sticky');if(s)s.style.display='none'}
-var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.1});
-document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
-</script>
+<div class="cookie" role="dialog" aria-label="Cookies"><p>I use a few analytics cookies to see which pages help people. Nothing is sold or shared.</p><div><button type="button" class="btn ghost" data-no>Decline</button><button type="button" class="btn" data-yes>Accept</button></div></div>
+<script src="assets/site.js" defer></script>
+<script src="https://mara.thesessionlab.com/growth/growth-track.js" defer></script>
+<script src="https://mara.thesessionlab.com/growth/chat.js" data-brand="jade" defer></script>
 </body></html>
