@@ -49,10 +49,10 @@
     },
 
     // Meta Pixel (Instagram and Facebook). 15 or 16 digits.
-    metaPixel: "",
+    metaPixel: "1684505053286111",
 
     // LinkedIn Insight Tag partner ID (digits) and conversion IDs (digits).
-    linkedinPartner: "",
+    linkedinPartner: "10118218",
     linkedinConversions: {
       sign_up: "",
       start_trial: "",

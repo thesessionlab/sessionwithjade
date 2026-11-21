@@ -123,11 +123,23 @@
     if (!window.lintrk) { window.lintrk = function (a, b) { window.lintrk.q.push([a, b]); }; window.lintrk.q = []; }
     var s = document.createElement('script'); s.async = true; s.src = 'https://snap.licdn.com/li.lms-analytics/insight.min.js'; document.head.appendChild(s);
   }
-  loadLinkedIn(); loadMeta(); window.addEventListener('maraconsent', function () { loadLinkedIn(); loadMeta(); });
+  /* Google Analytics 4 and Google Ads: the same property and account as thesessionlab.com and Mara.
+     Loads only after Accept. Page views and the names of steps, never names, emails or answers. */
+  var GA4 = 'G-6PS24XN959', GADS = 'AW-18557702547';
+  function analyticsOk() { var c = getConsent(); return !!c && /^v1\.a1\./.test(c); }
+  function loadGoogle() {
+    if (!analyticsOk() || window.__swjGtag) return; window.__swjGtag = true;
+    window.dataLayer = window.dataLayer || []; window.gtag = window.gtag || function () { window.dataLayer.push(arguments); };
+    window.gtag('consent', 'default', { analytics_storage: 'granted', ad_storage: adsOk() ? 'granted' : 'denied', ad_user_data: adsOk() ? 'granted' : 'denied', ad_personalization: adsOk() ? 'granted' : 'denied' });
+    window.gtag('js', new Date()); window.gtag('config', GA4, { cookie_domain: 'auto' }); if (adsOk()) window.gtag('config', GADS);
+    var s = document.createElement('script'); s.async = true; s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA4; document.head.appendChild(s);
+  }
+  loadLinkedIn(); loadMeta(); loadGoogle(); window.addEventListener('maraconsent', function () { loadLinkedIn(); loadMeta(); loadGoogle(); });
   window.sessionTrack = window.sessionTrack || function (name) {
     var id = name === 'generate_lead' ? LINKEDIN_CONVERSIONS.application : name === 'sign_up' ? LINKEDIN_CONVERSIONS.lead : '';
     if (id && window.lintrk && adsOk()) try { window.lintrk('track', { conversion_id: Number(id) }); } catch (x) {}
     if (window.fbq && adsOk()) try { window.fbq('track', name === 'generate_lead' ? 'SubmitApplication' : 'Lead'); } catch (x) {}
+    if (window.gtag && analyticsOk()) try { window.gtag('event', name); if (name === 'generate_lead' && adsOk()) window.gtag('event', 'conversion', { send_to: GADS + '/DCTTCPG0zrIdEJOjgJFF' }); } catch (x) {}
   };
 
   var cb = document.querySelector('.cookie');
