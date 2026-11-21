@@ -64,7 +64,7 @@ var CRM_ENDPOINT = "https://mara.thesessionlab.com/api/intake"; // the Mara CRM
 var FALLBACK_EMAIL = "jade@thesessionlab.com";
 var mb=document.querySelector('.menubtn');
 mb.addEventListener('click',function(){var o=document.body.classList.toggle('menu-open');mb.textContent=o?'Close':'Menu';mb.setAttribute('aria-expanded',o);document.getElementById('menu').setAttribute('aria-hidden',!o)});
-document.querySelectorAll('[data-book]').forEach(function(a){a.href="https://calendly.com/jade-sessioncare/session-with-jade-discovery";a.target="_blank";a.rel="noopener"});
+document.querySelectorAll('[data-book]').forEach(function(a){a.href="https://mara.thesessionlab.com/book/private_consultation";a.target="_blank";a.rel="noopener"});
 function send(d,done){
   // Every form goes to the Mara CRM (5 Nov 2026). If that fails, it falls back to an email.
   var key=d.list==='Mailing list'?'jade-list':d.enquiry_for==='Someone I represent'?'creative':d.enquiry_for==='An organisation'?'jade-org':d.enquiry_for==='An event'?'jade-speaking':'jade-enquiry';

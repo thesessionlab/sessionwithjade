@@ -326,9 +326,9 @@
 
   // Calendly bookings (Session pages embed the Calendly widget).
   window.addEventListener("message", function (e) {
-    if (!e || !/calendly\.com$/.test((e.origin || "").replace(/^https?:\/\//, "").split(":")[0])) return;
-    var d = e.data;
-    if (d && d.event === "calendly.event_scheduled") track("book_call", { tool: "calendly" });
+    var host = (e && e.origin || "").replace(/^https?:\/\//, "").split(":")[0], d = e && e.data;
+    if (/calendly\.com$/.test(host) && d && d.event === "calendly.event_scheduled") track("book_call", { tool: "calendly" });
+    if (host === "mara.thesessionlab.com" && d && d.event === "mara.booked") track("book_call", { tool: "mara", booking: String(d.type || "") });
   });
 
   // Clicks from Session to Mara, and on Calendly links (analytics only).
@@ -336,8 +336,8 @@
     var a = e.target && e.target.closest ? e.target.closest("a[href]") : null;
     if (!a) return;
     var href = a.getAttribute("href") || "";
-    if (SITE === "session" && /mara\.thesessionlab\.com/.test(href)) track("click_to_mara", { link_url: href.split("?")[0] });
-    else if (/calendly\.com\//.test(href)) track("open_booking", { link_url: href.split("?")[0] });
+    if (/calendly\.com\/|thesessionlab\.com\/book\//.test(href)) track("open_booking", { link_url: href.split("?")[0] });
+    else if (SITE === "session" && /mara\.thesessionlab\.com/.test(href)) track("click_to_mara", { link_url: href.split("?")[0] });
     else if (/^mailto:/.test(href)) track("click_email", {});
   }, true);
 
