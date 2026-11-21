@@ -28,7 +28,7 @@
     if (!u.utm_source) { src.searchParams.set('utm_source', document.referrer && !/sessionwithjade\.com/.test(document.referrer) ? 'referral' : 'direct'); src.searchParams.set('utm_medium', 'website'); }
     var frame = document.createElement('iframe');
     frame.src = src.toString(); frame.title = box.getAttribute('data-title') || 'Free tool';
-    frame.setAttribute('loading', 'lazy'); frame.style.cssText = 'width:100%;border:0;min-height:720px;display:block;background:transparent';
+    frame.setAttribute('loading', 'lazy'); frame.setAttribute('allow', 'microphone'); frame.style.cssText = 'width:100%;border:0;min-height:720px;display:block;background:transparent';
     box.appendChild(frame);
     fetch(MARA + '/api/growth/public/forms/' + encodeURIComponent(key)).then(function (r) {
       if (r.ok) return;
@@ -42,6 +42,7 @@
       if (e.data.type === 'mara-form-height' && e.data.height > 200) frame.style.height = (e.data.height + 24) + 'px';
       if (e.data.type === 'mara-form-done' && e.data.form === key) {
         try { if (window.sessionTrack) window.sessionTrack(key === 'private_application' ? 'generate_lead' : 'sign_up', { method: key }); } catch (_) {}
+        if (e.data.submission) try { sessionStorage.setItem('swj_submission', e.data.submission); } catch (_) {}
         if (e.data.submission) document.querySelectorAll('[data-guide]').forEach(function (a) { a.href = MARA + '/g/' + a.getAttribute('data-guide') + '/' + encodeURIComponent(e.data.submission); });
         var next = box.getAttribute('data-done');
         if (next) { var el = document.getElementById(next); if (el) el.hidden = false; }

@@ -135,11 +135,14 @@
     var s = document.createElement('script'); s.async = true; s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA4; document.head.appendChild(s);
   }
   loadLinkedIn(); loadMeta(); loadGoogle(); window.addEventListener('maraconsent', function () { loadLinkedIn(); loadMeta(); loadGoogle(); });
-  window.sessionTrack = window.sessionTrack || function (name) {
+  window.sessionTrack = window.sessionTrack || function (name, props) {
+    props = props || {};
+    var money = props.value != null ? { value: props.value, currency: props.currency || 'GBP' } : {};
     var id = name === 'generate_lead' ? LINKEDIN_CONVERSIONS.application : name === 'sign_up' ? LINKEDIN_CONVERSIONS.lead : '';
     if (id && window.lintrk && adsOk()) try { window.lintrk('track', { conversion_id: Number(id) }); } catch (x) {}
-    if (window.fbq && adsOk()) try { window.fbq('track', name === 'generate_lead' ? 'SubmitApplication' : 'Lead'); } catch (x) {}
-    if (window.gtag && analyticsOk()) try { window.gtag('event', name); if (name === 'generate_lead' && adsOk()) window.gtag('event', 'conversion', { send_to: GADS + '/DCTTCPG0zrIdEJOjgJFF' }); } catch (x) {}
+    var meta = { generate_lead: 'SubmitApplication', sign_up: 'Lead', begin_checkout: 'InitiateCheckout', purchase: 'Purchase' }[name];
+    if (meta && window.fbq && adsOk()) try { window.fbq('track', meta, money, props.transaction_id ? { eventID: 'priv_' + props.transaction_id } : undefined); } catch (x) {}
+    if (window.gtag && analyticsOk()) try { window.gtag('event', name, Object.assign({}, money, props.transaction_id ? { transaction_id: props.transaction_id } : {})); if (name === 'generate_lead' && adsOk()) window.gtag('event', 'conversion', { send_to: GADS + '/DCTTCPG0zrIdEJOjgJFF' }); } catch (x) {}
   };
 
   var cb = document.querySelector('.cookie');
