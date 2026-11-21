@@ -10,6 +10,7 @@ Disallow: /mental-health/
 Disallow: /media/
 Disallow: /speaking/
 Disallow: /assets/guides/
+Disallow: /assets/ads/
 
 User-agent: OAI-SearchBot
 Allow: /
@@ -20,6 +21,7 @@ Disallow: /mental-health/
 Disallow: /media/
 Disallow: /speaking/
 Disallow: /assets/guides/
+Disallow: /assets/ads/
 
 User-agent: ChatGPT-User
 Allow: /
@@ -30,6 +32,7 @@ Disallow: /mental-health/
 Disallow: /media/
 Disallow: /speaking/
 Disallow: /assets/guides/
+Disallow: /assets/ads/
 
 User-agent: GPTBot
 Allow: /
@@ -40,6 +43,7 @@ Disallow: /mental-health/
 Disallow: /media/
 Disallow: /speaking/
 Disallow: /assets/guides/
+Disallow: /assets/ads/
 
 User-agent: Claude-SearchBot
 Allow: /
@@ -50,6 +54,7 @@ Disallow: /mental-health/
 Disallow: /media/
 Disallow: /speaking/
 Disallow: /assets/guides/
+Disallow: /assets/ads/
 
 User-agent: Claude-User
 Allow: /
@@ -60,6 +65,7 @@ Disallow: /mental-health/
 Disallow: /media/
 Disallow: /speaking/
 Disallow: /assets/guides/
+Disallow: /assets/ads/
 
 User-agent: ClaudeBot
 Allow: /
@@ -70,6 +76,7 @@ Disallow: /mental-health/
 Disallow: /media/
 Disallow: /speaking/
 Disallow: /assets/guides/
+Disallow: /assets/ads/
 
 User-agent: PerplexityBot
 Allow: /
@@ -80,6 +87,7 @@ Disallow: /mental-health/
 Disallow: /media/
 Disallow: /speaking/
 Disallow: /assets/guides/
+Disallow: /assets/ads/
 
 User-agent: Perplexity-User
 Allow: /
@@ -90,6 +98,7 @@ Disallow: /mental-health/
 Disallow: /media/
 Disallow: /speaking/
 Disallow: /assets/guides/
+Disallow: /assets/ads/
 
 User-agent: Google-Extended
 Allow: /
@@ -100,6 +109,7 @@ Disallow: /mental-health/
 Disallow: /media/
 Disallow: /speaking/
 Disallow: /assets/guides/
+Disallow: /assets/ads/
 
 User-agent: Googlebot
 Allow: /
@@ -110,6 +120,7 @@ Disallow: /mental-health/
 Disallow: /media/
 Disallow: /speaking/
 Disallow: /assets/guides/
+Disallow: /assets/ads/
 
 User-agent: Applebot
 Allow: /
@@ -120,6 +131,7 @@ Disallow: /mental-health/
 Disallow: /media/
 Disallow: /speaking/
 Disallow: /assets/guides/
+Disallow: /assets/ads/
 
 User-agent: Applebot-Extended
 Allow: /
@@ -130,6 +142,7 @@ Disallow: /mental-health/
 Disallow: /media/
 Disallow: /speaking/
 Disallow: /assets/guides/
+Disallow: /assets/ads/
 
 User-agent: Bingbot
 Allow: /
@@ -140,6 +153,7 @@ Disallow: /mental-health/
 Disallow: /media/
 Disallow: /speaking/
 Disallow: /assets/guides/
+Disallow: /assets/ads/
 
 User-agent: DuckAssistBot
 Allow: /
@@ -150,5 +164,6 @@ Disallow: /mental-health/
 Disallow: /media/
 Disallow: /speaking/
 Disallow: /assets/guides/
+Disallow: /assets/ads/
 
 Sitemap: https://sessionwithjade.com/sitemap.xml
