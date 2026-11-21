@@ -113,7 +113,7 @@
     window.fbq('set', 'autoConfig', false, META_PIXEL);
     window.fbq('init', META_PIXEL); window.fbq('track', 'PageView');
   }
-  var LINKEDIN_PARTNER = '';
+  var LINKEDIN_PARTNER = '10118218';
   var LINKEDIN_CONVERSIONS = { lead: '', application: '' };
   function adsOk() { var c = getConsent(); return !!c && /^v1\.a[01]\.d1$/.test(c); }
   function loadLinkedIn() {
