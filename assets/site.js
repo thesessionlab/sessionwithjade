@@ -114,7 +114,7 @@
     window.fbq('init', META_PIXEL); window.fbq('track', 'PageView');
   }
   var LINKEDIN_PARTNER = '10118218';
-  var LINKEDIN_CONVERSIONS = { lead: '', application: '' };
+  var LINKEDIN_CONVERSIONS = { lead: '', application: '32389450' };
   function adsOk() { var c = getConsent(); return !!c && /^v1\.a[01]\.d1$/.test(c); }
   function loadLinkedIn() {
     if (!LINKEDIN_PARTNER || !adsOk() || window._linkedin_partner_id) return;
