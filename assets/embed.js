@@ -16,7 +16,7 @@
   function utm() {
     var out = {}, q = new URLSearchParams(location.search);
     ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'].forEach(function (k) { if (q.get(k)) out[k] = q.get(k); });
-    try { if (Object.keys(out).length) localStorage.setItem('mara_last_utm', JSON.stringify(out)); else { var s = localStorage.getItem('mara_last_utm'); if (s) out = JSON.parse(s); } } catch (_) {}
+    try { var s = localStorage.getItem('mara_last_utm'); var internal = out.utm_source === 'sessionwithjade'; if (Object.keys(out).length && !(internal && s)) localStorage.setItem('mara_last_utm', JSON.stringify(out)); else if (s) out = JSON.parse(s); } catch (_) {}
     return out;
   }
   document.querySelectorAll('[data-form]').forEach(function (box) {
