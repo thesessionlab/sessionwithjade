@@ -1,5 +1,0 @@
-<!doctype html><meta charset="utf-8"><body>sending<script>
-(async()=>{const names=['Mara_Ad_06-Sophie-Got-The-Job-4x5.jpg','Mara_Ad_06-Sophie-Got-The-Job-Story.jpg'];
-const files=[];for(const n of names){const b=await (await fetch('/tmp-meta/'+n+'?v=3')).arrayBuffer();files.push({name:n,buf:b});}
-window.opener.postMessage({files},'https://adsmanager.facebook.com');document.body.textContent='sent '+files.length;})();
-</script>
